@@ -42,29 +42,47 @@ public class DBConnection {
 	private static PreparedStatement deleteTermById;
 	private static PreparedStatement putDisceplineMark;
 	private static PreparedStatement updateMark;
-
 	public DBConnection(String url) {
 		try {
+			String dbUrl = Constants.CONNECTING_URL;
+			if (System.getenv("OPENSHIFT_MYSQL_DB_HOST") != null) {
+				dbUrl = String.format("jdbc:mysql://%s/%s?user=%s&password=%s",
+						System.getenv("$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT"),
+						System.getenv("jbossews"),
+						System.getenv("adminyGBDPY3"),
+						System.getenv("password=n5t4mmdF8VHU"));
+			}
+
 			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection(Constants.CONNECTING_URL);
+			conn = DriverManager.getConnection(dbUrl);
 			loadPreparedStatements();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
 	}
+	//public DBConnection(String url) {
+		//try {
+		//	Class.forName("com.mysql.jdbc.Driver");
+		//	conn = DriverManager.getConnection(Constants.CONNECTING_URL);
+		//	loadPreparedStatements();
+		//} catch (Exception e) {
+		//	e.printStackTrace();
+		//}
+
+	//}
 
 	private void loadPreparedStatements() {
 		try {
 			loadAllRoles = conn.prepareStatement("SELECT * FROM roles");
 			loadAllTerms = conn.prepareStatement("SELECT * FROM disciplines LEFT join terms_disceplines on disciplines.id=terms_disceplines.id_disceplines WHERE terms_disceplines.id_terms=?");
 			lastInsertID=conn.prepareStatement("SELECT LAST_INSERT_ID()");
-			getAllTerms = conn.prepareStatement("SELECT id, duration  FROM `students`.`terms`");
-			getAllDisciplineTerms = conn.prepareStatement("SELECT ID FROM students.terms_disceplines");
-			deleteAllDisciplineTerms= conn.prepareStatement("DELETE FROM `students`.`terms_disceplines` WHERE `id_terms`=?");
-			putAllDisciplineTerms= conn.prepareStatement("INSERT INTO `students`.`terms_disceplines` (`id_terms`, `id_disceplines`) VALUES (?, ?)");
-			putDisceplineMark=conn.prepareStatement("INSERT INTO `students`.`marks` (`id_student`, `id_terms_disceplines`) VALUES (?, ?)");
-			updateMark=conn.prepareStatement("UPDATE `students`.`marks` SET `mark`=? WHERE `id`=?");
+			getAllTerms = conn.prepareStatement("SELECT id, duration  FROM `terms`");
+			getAllDisciplineTerms = conn.prepareStatement("SELECT ID FROM terms_disceplines");
+			deleteAllDisciplineTerms= conn.prepareStatement("DELETE FROM `terms_disceplines` WHERE `id_terms`=?");
+			putAllDisciplineTerms= conn.prepareStatement("INSERT INTO `terms_disceplines` (`id_terms`, `id_disceplines`) VALUES (?, ?)");
+			putDisceplineMark=conn.prepareStatement("INSERT INTO `marks` (`id_student`, `id_terms_disceplines`) VALUES (?, ?)");
+			updateMark=conn.prepareStatement("UPDATE `marks` SET `mark`=? WHERE `id`=?");
 			loadAllLogins = conn.prepareStatement("SELECT login, id FROM accounts ");
 			loadAccountByLogin = conn.prepareStatement("SELECT * FROM accounts WHERE login = ?");
 			loadRolesById = conn.prepareStatement("SELECT * FROM roles WHERE id =?");
@@ -77,16 +95,15 @@ public class DBConnection {
 			deleteTermById = conn.prepareStatement("DELETE FROM terms WHERE id=?");
 			loadAllStudents = conn.prepareStatement("SELECT * FROM students");
 			loadStudentById = conn.prepareStatement("SELECT * FROM students WHERE id =?");
-			updateStudentById = conn.prepareStatement("UPDATE `students`.`students` SET `name`=?, `surname`=?, `date`=?, `group`=? WHERE `id`=?");
-			createStudent = conn.prepareStatement("INSERT INTO `students`.`students` (`name`, `surname`, `date`, `group`) VALUES (?, ?, ?, ?)");
-			createDiscipline = conn.prepareStatement("INSERT INTO `students`.`disciplines` (`disciplines`) VALUES (?)");
+			updateStudentById = conn.prepareStatement("UPDATE `students` SET `name`=?, `surname`=?, `date`=?, `group`=? WHERE `id`=?");
+			createStudent = conn.prepareStatement("INSERT INTO `students` (`name`, `surname`, `date`, `group`) VALUES (?, ?, ?, ?)");
+			createDiscipline = conn.prepareStatement("INSERT INTO `disciplines` (`disciplines`) VALUES (?)");
 			updateDisciplineById = conn.prepareStatement("UPDATE disciplines SET disciplines=? WHERE id=?");
 			deleteDisciplineById = conn.prepareStatement("DELETE FROM disciplines WHERE id=?");
 			deleteStudentById = conn.prepareStatement("DELETE FROM students WHERE id=?");
 			loadMarksById=conn.prepareStatement("SELECT * FROM marks LEFT join terms_disceplines on marks.id_terms_disceplines=terms_disceplines.id join disciplines on terms_disceplines.id_disceplines=disciplines.id join terms on terms_disceplines.id_terms=terms.id where id_student=? and terms.id=?");
 			averageMarks=conn.prepareStatement("SELECT avg(mark) FROM marks LEFT join terms_disceplines on marks.id_terms_disceplines=terms_disceplines.id join disciplines on terms_disceplines.id_disceplines=disciplines.id join terms on terms_disceplines.id_terms=terms.id where id_student=? and terms.id=?");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -120,7 +137,6 @@ public class DBConnection {
 			putDisceplineMark.close();
 			updateMark.close();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
