@@ -45,7 +45,7 @@ public class DBConnection {
 	public DBConnection(String url) {
 		try {
 			String dbUrl = Constants.CONNECTING_URL;
-			if (System.getenv("jbossews-acmunit.rhcloud.com") != null) {
+			if (System.getenv("127.13.153.130") != null) {
 				dbUrl = String.format("jdbc:mysql://%s/%s?user=%s&password=%s",
 						System.getenv("127.13.153.130:3306"),
 						System.getenv("jbossews"),
