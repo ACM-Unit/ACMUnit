@@ -45,9 +45,9 @@ public class DBConnection {
 	public DBConnection(String url) {
 		try {
 			String dbUrl = Constants.CONNECTING_URL;
-			if (System.getenv("$OPENSHIFT_MYSQL_DB_HOST") != null) {
+			if (System.getenv("jbossews-acmunit.rhcloud.com") != null) {
 				dbUrl = String.format("jdbc:mysql://%s/%s?user=%s&password=%s",
-						System.getenv("$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT"),
+						System.getenv("jbossews-acmunit.rhcloud.com:3306"),
 						System.getenv("jbossews"),
 						System.getenv("adminyGBDPY3"),
 						System.getenv("n5t4mmdF8VHU"));
