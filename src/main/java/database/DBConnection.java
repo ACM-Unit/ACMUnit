@@ -48,7 +48,7 @@ public class DBConnection {
 			if (System.getenv("$OPENSHIFT_MYSQL_DB_HOST") != null) {
 				dbUrl = String.format("jdbc:mysql://%s/%s?user=%s&password=%s",
 						System.getenv("$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT"),
-						System.getenv("students"),
+						System.getenv("jbossews"),
 						System.getenv("adminyGBDPY3"),
 						System.getenv("n5t4mmdF8VHU"));
 			}
