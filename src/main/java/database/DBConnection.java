@@ -45,12 +45,13 @@ public class DBConnection {
 	public DBConnection(String url) {
 		try {
 			String dbUrl = Constants.CONNECTING_URL;
-			if (System.getenv("127.13.153.130") != null) {
-				dbUrl = String.format("jdbc:mysql://%s/%s?user=%s&password=%s",
-						System.getenv("127.13.153.130:3306"),
-						System.getenv("jbossews"),
-						System.getenv("adminyGBDPY3"),
-						System.getenv("n5t4mmdF8VHU"));
+			if (System.getenv("OPENSHIFT_MYSQL_DB_HOST") != null) {
+				dbUrl = String.format("jdbc:mysql://%s:%s/%s?user=%s&password=%s&characterEncoding=UTF-8",
+						System.getenv("OPENSHIFT_MYSQL_DB_HOST"),
+						System.getenv("OPENSHIFT_MYSQL_DB_PORT"),
+						System.getenv("OPENSHIFT_GEAR_NAME"),
+						System.getenv("OPENSHIFT_MYSQL_DB_USERNAME"),
+						System.getenv("OPENSHIFT_MYSQL_DB_PASSWORD"));
 			}
 
 			Class.forName("com.mysql.jdbc.Driver");
@@ -61,17 +62,6 @@ public class DBConnection {
 		}
 
 	}
-	//public DBConnection(String url) {
-		//try {
-		//	Class.forName("com.mysql.jdbc.Driver");
-		//	conn = DriverManager.getConnection(Constants.CONNECTING_URL);
-		//	loadPreparedStatements();
-		//} catch (Exception e) {
-		//	e.printStackTrace();
-		//}
-
-	//}
-
 	private void loadPreparedStatements() {
 		try {
 			loadAllRoles = conn.prepareStatement("SELECT * FROM roles");

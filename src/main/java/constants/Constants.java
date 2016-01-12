@@ -2,7 +2,7 @@ package constants;
 
 public interface Constants {
     //	public static final String CONNECTING_URL = "jdbc:mysql://127.0.0.1/studentprogress?user=root&password=1515&characterEncoding=UTF-8";
-    String CONNECTING_URL = "jdbc:mysql://127.13.153.130:3306/jbossews?user=adminyGBDPY3&password=n5t4mmdF8VHU&characterEncoding=UTF-8";
+    String CONNECTING_URL = "jdbc:mysql://localhost/students?user=root&password=root&characterEncoding=UTF-8";
     int CONNECTING_POOL_SIZE = 5;
 
     String CONTEXT = "CONTEXT";
@@ -13,5 +13,5 @@ public interface Constants {
 
     int ROLE_ADMIN = 1;
     int ROLE_STUDENT = 2;
-    String DB_URL = "jdbc:mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/jbossews?user=adminyGBDPY3&password=n5t4mmdF8VHU&characterEncoding=UTF-8";
+    String DB_URL = "jdbc:mysql://OPENSHIFT_MYSQL_DB_HOST:OPENSHIFT_MYSQL_DB_PORT/jbossews?user=adminyGBDPY3&password=n5t4mmdF8VHU&characterEncoding=UTF-8";
 }
