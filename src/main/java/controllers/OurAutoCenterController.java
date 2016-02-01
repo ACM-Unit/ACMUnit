@@ -17,6 +17,7 @@ public class OurAutoCenterController extends AbstractWebtasksServletHandler {
     }
     @Override
     protected void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        System.out.println();
         gotoToJSP("ourAutoCenter.jsp", request, response);
     }
 }

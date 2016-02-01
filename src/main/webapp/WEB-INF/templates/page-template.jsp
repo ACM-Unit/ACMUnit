@@ -82,7 +82,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="">
                                 <img src="/index_files/sentra-prof.jpg" alt="sentra" height="38" width="100">
                                 <p style="margin:0;padding:0;">sentra</p> <span>от 374 720 грн.</span>
                             </a>
