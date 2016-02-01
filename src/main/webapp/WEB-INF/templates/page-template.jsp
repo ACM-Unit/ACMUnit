@@ -63,7 +63,7 @@
 
 <div class="container">
     <header>
-        <a href="/index_files/logo.png" class="logo"></a>
+        <a href="/home.php" class="logo"></a>
 
         <div class="dealer-name">
             <div>Официальный дилер Nissan  </div>
@@ -76,43 +76,43 @@
                     <!-- start car-list -->
                     <ul class="car-list">
                         <li>
-                            <a href="/index_files/nissan-micra/">
+                            <a href="#">
                                 <img src="/index_files/c8bed5e5bf863c43bfa8a67fd612b9a4.png" alt="Micra" height="40" width="100">
                                 <p style="margin:0;padding:0;">Micra</p> <span>от 280 970 грн.</span>
                             </a>
                         </li>
                         <li>
-                            <a href="/auto/legkovye-avtomobili_nissan/nissan-sentra/">
+                            <a href="#">
                                 <img src="/index_files/sentra-prof.jpg" alt="sentra" height="38" width="100">
                                 <p style="margin:0;padding:0;">sentra</p> <span>от 374 720 грн.</span>
                             </a>
                         </li>
                         <li>
-                            <a href="/auto/krossovery_nissan/novyy-juke/">
+                            <a href="#">
                                 <img src="/index_files/new-juke3.png" alt="ОБНОВЛЕННЫЙ JUKE" height="40" width="100">
                                 <p style="margin:0;padding:0;">ОБНОВЛЕННЫЙ JUKE</p> <span>от 403 370 грн.</span>
                             </a>
                         </li>
                         <li>
-                            <a href="/auto/krossovery_nissan/nissan-juke-nismo-rs-/">
+                            <a href="#">
                                 <img src="/index_files/img5.jpg" alt="JUKE NISMO RS " height="40" width="100">
                                 <p style="margin:0;padding:0;">JUKE NISMO RS </p> <span>от 742 490 грн.</span>
                             </a>
                         </li>
                         <li>
-                            <a href="/auto/krossovery_nissan/novyy-nissan-qashqai/">
+                            <a href="#">
                                 <img src="/index_files/3902e79af1e3bc28153f0382a891f22d.png" alt="QASHQAI" height="40" width="100">
                                 <p style="margin:0;padding:0;">QASHQAI</p> <span>от 513 600 грн.</span>
                             </a>
                         </li>
                         <li>
-                            <a href="/auto/krossovery_nissan/nissan-murano/">
+                            <a href="#">
                                 <img src="/index_files/89a8acf0d6584e86dc51abc18fd1b871.png" alt="MURANO" height="40" width="100">
                                 <p style="margin:0;padding:0;">MURANO</p> <span>от 936 860 грн.</span>
                             </a>
                         </li>
                         <li>
-                            <a href="/auto/vnedorozhniki_nissan/novyy-nissan-x-trail/">
+                            <a href="#">
                                 <img src="/index_files/l.jpg" alt="X-TRAIL" height="43" width="100">
                                 <p style="margin:0;padding:0;">X-TRAIL</p> <span>от 657 840 грн.</span>
                             </a>
@@ -123,13 +123,13 @@
                 <li>
                     <a href="/service.php" class="">Сервис</a>
                     <ul class="second-list">
-                        <li><a href="/service/">Сервисное обслуживание</a></li>
-                        <li><a href="/service/the-entry-on-the/">Запись на ТО</a></li>
-                        <li><a href="/service/warranty-terms/">Условия гарантии</a></li>
-                        <li><a href="/service/support-nissan/">Служба поддержки Nissan</a></li>
-                        <li><a href="/service/the-help-on-roads/">Помощь на дорогах</a></li>
-                        <li><a href="/service/spare-parts/">Запасные части</a></li>
-                        <li><a href="/service/after-sales-service/">Послепродажное обслуживание</a></li>
+                        <li><a href="#">Сервисное обслуживание</a></li>
+                        <li><a href="#">Запись на ТО</a></li>
+                        <li><a href="#">Условия гарантии</a></li>
+                        <li><a href="#">Служба поддержки Nissan</a></li>
+                        <li><a href="#">Помощь на дорогах</a></li>
+                        <li><a href="#">Запасные части</a></li>
+                        <li><a href="#">Послепродажное обслуживание</a></li>
                     </ul>
                 </li>
                 <li>
@@ -138,35 +138,35 @@
                         <li>
                             <div>Услуги и сервисы</div>
                         </li>
-                        <li><a href="/services/special-offers/">Специальные предложения</a></li>
-                        <li><a href="/services/corporate-clients/">Корпоративным клиентам</a></li>
-                        <li><a href="/services/leasing/">Лизинг</a></li>
-                        <li><a href="/services/trade-in/">Trade in</a></li>
-                        <li><a href="/services/test-drive/">Запись на тест-драйв</a></li>
-                        <li><a href="/services/used-cars/">Авто с пробегом</a></li>
-                        <li><a href="/auto/all_cars/">Автомобили в наличии</a></li>
+                        <li><a href="#">Специальные предложения</a></li>
+                        <li><a href="#">Корпоративным клиентам</a></li>
+                        <li><a href="#">Лизинг</a></li>
+                        <li><a href="#">Trade in</a></li>
+                        <li><a href="#">Запись на тест-драйв</a></li>
+                        <li><a href="#">Авто с пробегом</a></li>
+                        <li><a href="#">Автомобили в наличии</a></li>
                         <li>
                             <div>Nissan Finance</div>
                         </li>
-                        <li><a href="/services/nissan-finance/">Условия кредитования</a></li>
+                        <li><a href="#">Условия кредитования</a></li>
                         <!--<li><a href="/services/credit/" >Кредит</a></li>-->
-                        <li><a target="_blank" href="http://nissan.kiyauto.com.ua/files/calculator.xls">Кредитный калькулятор</a></li>
-                        <li><a href="/auto/credit/"> Заявка на кредит</a></li>
-                        <li><a href="/company/loyalty-program/">Программа лояльности</a></li>
-                        <li><a href="/services/car-insurance/">Страхование</a></li>
+                        <li><a target="_blank" href="#">Кредитный калькулятор</a></li>
+                        <li><a href="#"> Заявка на кредит</a></li>
+                        <li><a href="#">Программа лояльности</a></li>
+                        <li><a href="#">Страхование</a></li>
 
                     </ul>
 
                 </li>
                 <li>
-                    <a href="/company/" class="">Наш автоцентр</a>
+                    <a href="/OurAutoCenter.php" class="">Наш автоцентр</a>
                     <ul class="second-list">
-                        <li><a href="/company/news/">Новости</a></li>
-                        <li><a href="/company/about-company/">О компании</a></li>
-                        <li><a href="/company/contacts/">Контакты</a></li>
-                        <li><a href="/company/ask-question/">Задать вопрос</a></li>
-                        <li><a href="/company/vacancies/">Вакансии</a></li>
-                        <li><a href="/company/manager/107/">Ваш менеджер</a></li>
+                        <li><a href="#">Новости</a></li>
+                        <li><a href="#">О компании</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">Задать вопрос</a></li>
+                        <li><a href="#">Вакансии</a></li>
+                        <li><a href="#">Ваш менеджер</a></li>
                     </ul>
                 </li>
                 <li>
@@ -195,64 +195,64 @@
 <footer>
     <div class="contacts">
         <h4>Контактная информация</h4>
-        <div class="inline_">просп. Курский, 22, г. Сумы, Украина ,</div> <a href="/company/contacts/">Схема проезда</a>
+        <div class="inline_">просп. Курский, 22, г. Сумы, Украина ,</div> <a href="#">Схема проезда</a>
     </div>
     <div class="row">
         <div class="column column-5">
             <div class="panel">
-                <h4 class="cars"><a href="/auto/">автомобили</a></h4>
+                <h4 class="cars"><a href="/auto.php">автомобили</a></h4>
                 <ul>
-                    <li><a href="/auto/legkovye-avtomobili_nissan/">Легковые автомобили</a></li>
-                    <li><a href="/auto/krossovery_nissan/">Кроссоверы</a></li>
-                    <li><a href="/auto/vnedorozhniki_nissan/">Внедорожники</a></li>
+                    <li><a href="#">Легковые автомобили</a></li>
+                    <li><a href="#">Кроссоверы</a></li>
+                    <li><a href="#">Внедорожники</a></li>
 
                 </ul>
             </div>
         </div>
         <div class="column column-5">
             <div class="panel">
-                <h4 class="service"><a href="/service/">СЕРВИС</a></h4>
+                <h4 class="service"><a href="/service.php">СЕРВИС</a></h4>
                 <ul>
-                    <li><a href="/service/">Сервисное обслуживание</a></li>
-                    <li><a href="/service/the-entry-on-the/">Запись на ТО</a></li>
-                    <li><a href="/service/warranty-terms/">Условия гарантии</a></li>
-                    <li><a href="/service/support-nissan/">Служба поддержки Nissan</a></li>
-                    <li><a href="/service/the-help-on-roads/">Помощь на дорогах</a></li>
-                    <li><a href="/service/spare-parts/">Запасные части</a></li>
-                    <li><a href="/service/after-sales-service/">Послепродажное обслуживание</a></li>
-                    <li><a href="/service/the-installation-of-gas-equipment/">Установка ГБО</a></li>
+                    <li><a href="/service.php">Сервисное обслуживание</a></li>
+                    <li><a href="#">Запись на ТО</a></li>
+                    <li><a href="#">Условия гарантии</a></li>
+                    <li><a href="#">Служба поддержки Nissan</a></li>
+                    <li><a href="#">Помощь на дорогах</a></li>
+                    <li><a href="#">Запасные части</a></li>
+                    <li><a href="#">Послепродажное обслуживание</a></li>
+                    <li><a href="#">Установка ГБО</a></li>
                 </ul>				</div>
         </div>
         <div class="column column-5">
             <div class="panel">
-                <h4 class="services"><a href="/services/">УСЛУГИ</a></h4>
+                <h4 class="services"><a href="/services.php">УСЛУГИ</a></h4>
 
                 <ul>
-                    <li><a href="/services/special-offers/">Специальные предложения</a></li>
+                    <li><a href="#">Специальные предложения</a></li>
 
-                    <li><a href="/services/nissan-finance/">Nissan Finance</a></li>
+                    <li><a href="#">Nissan Finance</a></li>
 
-                    <li><a href="/services/corporate-clients/">Корпоративным клиентам</a></li>
-                    <li><a href="/services/car-insurance/">Страхование</a></li>
+                    <li><a href="#">Корпоративным клиентам</a></li>
+                    <li><a href="#">Страхование</a></li>
 
-                    <li><a href="/services/leasing/">Лизинг</a></li>
+                    <li><a href="#">Лизинг</a></li>
 
-                    <li><a href="/services/trade-in/">Trade in</a></li>
-                    <li><a href="/services/credit/">Кредит</a></li>
+                    <li><a href="#">Trade in</a></li>
+                    <li><a href="#">Кредит</a></li>
                 </ul>
             </div>
         </div>
         <div class="column column-6">
             <div class="panel">
-                <h4 class="avtocentr"><a href="/company/">НАШ АВТОЦЕНТР</a></h4>
+                <h4 class="avtocentr"><a href="/OurAutoCenter.php">НАШ АВТОЦЕНТР</a></h4>
                 <ul>
-                    <li><a href="/company/news/">Новости</a></li>
-                    <li><a href="/company/about-company/">О компании</a></li>
-                    <li><a href="/company/loyalty-program/">Программа лояльности</a></li>
-                    <li><a href="/company/contacts/">Контакты</a></li>
-                    <li><a href="/company/ask-question/">Задать вопрос</a></li>
-                    <li><a href="/company/vacancies/">Вакансии</a></li>
-                    <li><a href="/company/manager/107/">Ваш менеджер</a></li>
+                    <li><a href="#">Новости</a></li>
+                    <li><a href="#">О компании</a></li>
+                    <li><a href="#">Программа лояльности</a></li>
+                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#">Задать вопрос</a></li>
+                    <li><a href="#">Вакансии</a></li>
+                    <li><a href="#">Ваш менеджер</a></li>
                     <li><a href=""></a></li>
                 </ul>				</div>
         </div>
@@ -271,7 +271,7 @@
         </div>
     </div>
     <div class="copyright">
-        © 2014 ТОВ «Кий Авто Холдинг» — Официальный дилер NISSAN.		</div>
+        © 2016 «Авто плюс» — Официальный дилер NISSAN.		</div>
 </footer>
 <!-- end footer -->
 <div class="popup-holder" id="auto-popup" style=">">

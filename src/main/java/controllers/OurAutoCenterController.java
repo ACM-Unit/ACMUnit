@@ -17,6 +17,6 @@ public class OurAutoCenterController extends AbstractWebtasksServletHandler {
     }
     @Override
     protected void handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        gotoToJSP("page5.jsp", request, response);
+        gotoToJSP("ourAutoCenter.jsp", request, response);
     }
 }

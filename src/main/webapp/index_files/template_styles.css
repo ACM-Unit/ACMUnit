@@ -1149,12 +1149,12 @@ table th {
 }
 .about-block h4 a {
 	display: inline-block;
-	//background: white url(/index_files/about-open.png) no-repeat right center;
+	background: white url(/index_files/about-open.png) no-repeat right center;
 	font-size: 14px;
 	padding-right: 40px;
 }
 .about-block h4 a.close {
-	//background: white url(/index_files/about-close.png) no-repeat right center;
+	background: white url(/index_files/about-close.png) no-repeat right center;
 }
 .about-block .about-text {
 	display: none;

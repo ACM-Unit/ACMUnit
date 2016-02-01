@@ -1,10 +1,10 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-    <article>
+    <article align= "center">
         <h1>Официальный дилерский и сервисный центр Nissan Авто Плюс в Сумах.</h1>
         <ul class="breadcrumb-navigation"><li><a href="/" title="Главная">Главная</a></li><li>&nbsp;/&nbsp;</li><li><a href="/company/" title="Наш автоцентр">Наш автоцентр</a></li><li>&nbsp;/&nbsp;</li><li><span>О компании</span></li></ul>
-        <div style="width: 780px;">
+        <div style="width: 70%;">
             <p align="justify"><b>"АВТО ПЛЮС" </b>на автомобильном рынке с 1998 года и является одной из ведущих компаний в области продаж, гарантийного и сервисного обслуживания автомобилей марки <b>Nissan</b>.</p>
 
             <p align="center"><img alt="DSC_1545.jpg" title="DSC_1545.jpg" src="http://nissan.kiyauto.com.ua/upload/medialibrary/d20/d20175fe856a24a7491cb41ce3feafd5.jpg" align="middle" border="0" width="60%"></p>
