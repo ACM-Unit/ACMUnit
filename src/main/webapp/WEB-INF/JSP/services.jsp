@@ -11,7 +11,7 @@
         <h1>Продажа автомобилей Nissan для корпоративных клиентов в Сумах!</h1>
         <ul class="breadcrumb-navigation"><li><a href="/" title="Главная">Главная</a></li><li>&nbsp;/&nbsp;</li><li><a href="#" title="Услуги">Услуги</a></li><li>&nbsp;/&nbsp;</li><li><span>Корпоративным клиентам</span></li></ul>
         <div id="text">
-            <p align="justify">Запросы на приобретение автомобилей можно направлять по e-mail: <strong>autoplus5@i.ua</strong>
+            <p align="justify">Запросы на приобретение автомобилей можно направлять по e-mail: <strong>emischenko@nissan-sumy.com.ua</strong>
                 <br>
             </p>
 
