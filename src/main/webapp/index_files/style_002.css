@@ -1,6 +1,0 @@
-div.mfeedback {}
-div.mf-name, div.mf-email, div.mf-captcha, div.mf-message { padding-bottom:0.4em;}
-div.mf-name input, div.mf-email input {}
-div.mf-message textarea {}
-span.mf-req {color:red;}
-div.mf-ok-text {color:green; font-weight:bold; padding-bottom: 1em;}
