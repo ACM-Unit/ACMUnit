@@ -11,5 +11,5 @@ public class Role extends AbstractModelIdName {
 	public Role(Integer id, String name) {
 		super(id, name);
 	}
-	
+
 }

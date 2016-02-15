@@ -9,20 +9,73 @@
 <meta name="keywords" content="jee, java, web, demo, webtasks" />
 <meta name="author" content="nata" />
 <title>Demo web application</title>
+	<link rel="stylesheet" type="text/css" href="${CONTEXT}/style.css" media="all" />
+	<link rel="stylesheet" media="all" href="${CONTEXT}/style/type/puritan.css" />
+	<!--[if IE 7]>
+	<link rel="stylesheet" type="text/css" href="style/css/ie7.css" media="all" />
+	<![endif]-->
+	<script type="text/javascript" src="${CONTEXT}/style/js/jquery-1.5.min.js"></script>
+	<script type="text/javascript" src="${CONTEXT}/style/js/jquery.jcarousel.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function() {
+			// Initialise the first and second carousel by class selector.
+			// Note that they use both the same configuration options (none in this case).
+			jQuery('.d-carousel .carousel').jcarousel({
+				scroll: 1
+			});
+		});
+	</script>
 
-<link rel="stylesheet" type="text/css"
+
+	<link rel="stylesheet" type="text/css"
 	href="${CONTEXT }/resources/css/jquery-ui-1.10.4.custom.css" />
 <link rel="stylesheet" type="text/css"
 	href="${CONTEXT }/resources/css/main.css" />
-<script type="text/javascript"
-	src="${CONTEXT }/resources/js/jquery-1.10.2.min.js"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="${CONTEXT }/css/styles.css">
 <script type="text/javascript"
 	src="${CONTEXT }/resources/js/webtasks.js"></script>
 	<script type="text/javascript"
 	src="${CONTEXT }/resources/js/jquery-ui-1.10.4.custom.js"></script>
+	<!-- Основные стили -->
+	<link rel="stylesheet" href="${CONTEXT }/owl-carousel/owl.carousel.css">
 
+	<!-- Тема по умолчанию -->
+	<link rel="stylesheet" href="${CONTEXT }/owl-carousel/owl.theme.css">
+
+	<!-- Подключаем jQuery  -->
+	<script src="${CONTEXT }/jquery-1.9.1.min.js"></script>
+
+	<!-- Подключаем плагин -->
+	<script src="${CONTEXT }/owl-carousel/owl.carousel.js"></script>
+	<script>
+		$(document).ready(function() {
+
+			$("#owl-example").owlCarousel();
+
+		});
+	</script>
+	<script>
+		// Инициализация плагина
+		$(".owl-carousel").owlCarousel()
+
+		// получаем объект карусели и записываем в переменную
+		var owl = $(".owl-carousel").data('owlCarousel');
+
+		// публичные методы
+		owl.next()   // переходим на следующий слайд
+		owl.prev()   // переходим на предыдущий слайд
+		owl.goTo(x)  // переходим на слайд x
+
+		owl.update() // обновляем слайд
+
+		owl.buildControlls()    // отображаем элементы управления
+		owl.destroyControlls()  // удаляем элементы управления
+
+		owl.play() // авто-прокрутка
+		owl.stop() // остановка авто-прокрутки
+	</script>
 <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-<link rel="stylesheet" href="/resources/demos/style.css">
+<link rel="stylesheet" href="${CONTEXT }/resources/demos/style.css">
 <script type ="text/javascript">
 	$(function() {
 		$("#datepicker").datepicker({
@@ -35,6 +88,7 @@
 
 	var context = "${CONTEXT}";
 </script>
+
 	<script>
 	function chck(url) {
 		var x=0;
