@@ -1,8 +1,8 @@
 package constants;
 
 public interface Constants {
-
-    String CONNECTING_URL = "jdbc:mysql://localhost/students?user=root&password=root&characterEncoding=UTF-8";
+    //	public static final String CONNECTING_URL = "jdbc:mysql://127.0.0.1/studentprogress?user=root&password=1515&characterEncoding=UTF-8";
+    String CONNECTING_URL = "jdbc:mysql://localhost:3306/storage?user=root&password=root&characterEncoding=UTF-8";
     int CONNECTING_POOL_SIZE = 5;
 
     String CONTEXT = "CONTEXT";
@@ -12,5 +12,5 @@ public interface Constants {
     String CURRENT_MAPPING = "CURRENT_MAPPING";
 
     int ROLE_ADMIN = 1;
-    int ROLE_STUDENT = 2;
+    int ROLE_USER = 2;
 }

@@ -1,6 +1,7 @@
 package controllers;
 
-import java.io.IOException;
+import constants.Constants;
+import org.apache.log4j.Logger;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -9,17 +10,10 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.apache.commons.lang.StringUtils;
-import org.apache.log4j.Logger;
-
-import services.WebtasksServiceManager;
-import constants.Constants;
-import database.DataService;
-import exeptions.InvalidDataException;
+import java.io.IOException;
 
 /**
- * @author nata
+ * @author acmunit
  * @version 1.0
  */
 public abstract class AbstractWebtasksServletHandler extends HttpServlet
@@ -27,13 +21,10 @@ public abstract class AbstractWebtasksServletHandler extends HttpServlet
 	private static final long serialVersionUID = 2616056221299712890L;
 	protected final Logger LOGGER = Logger.getLogger(getClass());
 	private String contextName;
-	private DataService dataService;
 
 	@Override
 	public final void init(ServletConfig config) throws ServletException {
 		contextName = config.getServletContext().getContextPath();
-		dataService = WebtasksServiceManager.getInstance(
-				config.getServletContext()).getDataService();
 		super.init(config);
 	}
 
@@ -108,10 +99,6 @@ public abstract class AbstractWebtasksServletHandler extends HttpServlet
 	protected void preHandleRequest(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 
-	}
-
-	protected final DataService getDataService() {
-		return dataService;
 	}
 
 	protected final String getContextName() {

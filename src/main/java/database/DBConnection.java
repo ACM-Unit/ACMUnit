@@ -1,558 +1,356 @@
 package database;
 
 import constants.Constants;
-import entity.*;
+import models.Account;
+import models.Precence;
+import models.Role;
+import models.WriteOff;
 import org.apache.log4j.Logger;
 
 import java.sql.*;
-import java.util.*;
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
+/**
+ * Created by Admin on 19.01.2016.
+ */
 public class DBConnection {
-	private static final Logger LOGGER = Logger.getLogger(DBConnection.class);
-	private Connection conn = null;
-	private ResultSet rs = null;
-	
-	private static PreparedStatement loadAllRoles;
-	private static PreparedStatement loadAllTerms;
-	private static PreparedStatement getAllDisciplineTerms;
-	private static PreparedStatement lastInsertID;
-	private static PreparedStatement getAllTerms;
-	private static PreparedStatement deleteAllDisciplineTerms;
-	private static PreparedStatement putAllDisciplineTerms;
-	private static PreparedStatement loadAllLogins;
-	private static PreparedStatement loadAccountByLogin;
-	private static PreparedStatement loadRolesById;
-	private static PreparedStatement getIdAccountRoles;
-	private static PreparedStatement getDisciplines;
-	private static PreparedStatement getDisciplineById;
-	private static PreparedStatement loadAllStudents;
-	private static PreparedStatement loadStudentById;
-	private static PreparedStatement createStudent;
-	private static PreparedStatement updateStudentById;
-	private static PreparedStatement deleteStudentById;
-	private static PreparedStatement loadMarksById;
-	private static PreparedStatement createDiscipline;
-	private static PreparedStatement updateDisciplineById;
-	private static PreparedStatement deleteDisciplineById;
-	private static PreparedStatement averageMarks;
-	private static PreparedStatement getTermById;
-	private static PreparedStatement addTerm;
-	private static PreparedStatement updateTermById;
-	private static PreparedStatement deleteTermById;
-	private static PreparedStatement putDisceplineMark;
-	private static PreparedStatement updateMark;
-	public DBConnection(String url) {
-		try {
-			String dbUrl = Constants.CONNECTING_URL;
-			if (System.getenv("OPENSHIFT_MYSQL_DB_HOST") != null) {
-				dbUrl = String.format("jdbc:mysql://%s:%s/%s?user=%s&password=%s&characterEncoding=UTF-8",
-						System.getenv("OPENSHIFT_MYSQL_DB_HOST"),
-						System.getenv("OPENSHIFT_MYSQL_DB_PORT"),
-						System.getenv("OPENSHIFT_GEAR_NAME"),
-						System.getenv("OPENSHIFT_MYSQL_DB_USERNAME"),
-						System.getenv("OPENSHIFT_MYSQL_DB_PASSWORD"));
-			}
+    private static final Logger LOGGER = Logger.getLogger(DBConnection.class);
+    private Connection conn = null;
+    private ResultSet rs = null;
+    private static PreparedStatement loadAllRoles;
+    private static PreparedStatement addPrecence;
+    private static PreparedStatement getIDMat;
+    private static PreparedStatement sreachPrecence;
+    private static PreparedStatement sreachPrecenceIf;
+    private static PreparedStatement getLength;
+    private static PreparedStatement updateLength;
+    private static PreparedStatement addMat;
+    private static PreparedStatement insertWriteOf;
+    private static PreparedStatement getWriteOf;
+    private static PreparedStatement updateWriteOf;
+    private static PreparedStatement addWriteOf;
+    private static PreparedStatement updateWriteOfPrecence;
+    private static PreparedStatement deleteWriteOfPrecence;
+    private static PreparedStatement loadAllLogins;
+    private static PreparedStatement loadAccountByLogin;
+    private static PreparedStatement loadRolesById;
+    private static PreparedStatement getIdAccountRoles;
+    public DBConnection(String url) {
+        try {
+            String dbUrl = Constants.CONNECTING_URL;
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection(dbUrl);
+            loadPreparedStatements();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection(dbUrl);
-			loadPreparedStatements();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+    }
+    private void loadPreparedStatements() {
+        try {
+            addMat=conn.prepareStatement("INSERT INTO STORAGE.MAT (`codename`, `sizerol`) VALUES (?, ?)");
+            //add materials
+            getIDMat=conn.prepareStatement("SELECT ID from STORAGE.MAT WHERE CODENAME=? AND SIZEROL=?");
+            addPrecence=conn.prepareStatement("INSERT INTO STORAGE.PRECENCE (`name`, `len`, `stat`) VALUES (?, ?, 1)");
+            //send maket
+            sreachPrecence = conn.prepareStatement("SELECT * from STORAGE.PRECENCE LEFT Join MAT ON PRECENCE.NAME=MAT.ID WHERE MAT.CODENAME=? AND MAT.SIZEROL=? AND PRECENCE.STAT=?");
+            sreachPrecenceIf = conn.prepareStatement("SELECT * from STORAGE.PRECENCE LEFT Join MAT ON PRECENCE.NAME=MAT.ID WHERE MAT.CODENAME=? AND MAT.SIZEROL>? AND PRECENCE.STAT=?");
+            getLength = conn.prepareStatement("SELECT LEN from STORAGE.PRECENCE WHERE ID=?");
+            updateLength = conn.prepareStatement("UPDATE STORAGE.PRECENCE SET LEN = ?,STAT = 1 WHERE ID = ?");
+            insertWriteOf= conn.prepareStatement("INSERT INTO STORAGE.WRITEOF(PRECENCE, LEN, TYPEWRITEOF, COMMENT) VALUES(?, ?, 5, ?)");
+           //inspect deffect
+            getWriteOf= conn.prepareStatement("SELECT ID FROM WRITEOF WHERE TYPEWRITEOF=1");
+            updateWriteOf=conn.prepareStatement("UPDATE STORAGE.writeof SET writeof.typewriteof = ? WHERE writeof.id= ?");
+            //add deffect
+            addWriteOf=conn.prepareStatement("INSERT INTO STORAGE.WRITEOF (PRECENCE, LEN, TYPEWRITEOF, COMMENT) VALUES (?, ?, ?, ?)");
+            //reAdd roll
+            updateWriteOfPrecence= conn.prepareStatement("UPDATE STORAGE.WRITEOF SET PRECENCE=? WHERE ID=?");
+            deleteWriteOfPrecence= conn.prepareStatement("DELETE FROM STORAGE.WRITEOF WHERE id=?");
+            //accounts
+            loadAllRoles = conn.prepareStatement("SELECT * FROM roles");
+            loadAllLogins = conn.prepareStatement("SELECT login, id FROM accounts ");
+            loadAccountByLogin = conn.prepareStatement("SELECT * FROM accounts WHERE login = ?");
+            loadRolesById = conn.prepareStatement("SELECT * FROM roles WHERE id =?");
+            getIdAccountRoles = conn.prepareStatement("SELECT id_role FROM accaunts_roles WHERE id_accaunt = ?");
+                 } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
-	}
-	private void loadPreparedStatements() {
-		try {
-			loadAllRoles = conn.prepareStatement("SELECT * FROM roles");
-			loadAllTerms = conn.prepareStatement("SELECT * FROM disciplines LEFT join terms_disceplines on disciplines.id=terms_disceplines.id_disceplines WHERE terms_disceplines.id_terms=?");
-			lastInsertID=conn.prepareStatement("SELECT LAST_INSERT_ID()");
-			getAllTerms = conn.prepareStatement("SELECT id, duration  FROM `terms`");
-			getAllDisciplineTerms = conn.prepareStatement("SELECT ID FROM terms_disceplines");
-			deleteAllDisciplineTerms= conn.prepareStatement("DELETE FROM `terms_disceplines` WHERE `id_terms`=?");
-			putAllDisciplineTerms= conn.prepareStatement("INSERT INTO `terms_disceplines` (`id_terms`, `id_disceplines`) VALUES (?, ?)");
-			putDisceplineMark=conn.prepareStatement("INSERT INTO `marks` (`id_student`, `id_terms_disceplines`) VALUES (?, ?)");
-			updateMark=conn.prepareStatement("UPDATE `marks` SET `mark`=? WHERE `id`=?");
-			loadAllLogins = conn.prepareStatement("SELECT login, id FROM accounts ");
-			loadAccountByLogin = conn.prepareStatement("SELECT * FROM accounts WHERE login = ?");
-			loadRolesById = conn.prepareStatement("SELECT * FROM roles WHERE id =?");
-			getIdAccountRoles = conn.prepareStatement("SELECT id_role FROM accaunts_roles WHERE id_accaunt = ?");
-			getDisciplines = conn.prepareStatement("SELECT * FROM disciplines");
-			getDisciplineById = conn.prepareStatement("SELECT * FROM disciplines WHERE id = ?");
-			getTermById = conn.prepareStatement("SELECT * FROM terms WHERE id = ?");
-			addTerm = conn.prepareStatement("INSERT INTO terms (duration) VALUES (?)");
-			updateTermById = conn.prepareStatement("UPDATE terms SET duration=? WHERE id=?");
-			deleteTermById = conn.prepareStatement("DELETE FROM terms WHERE id=?");
-			loadAllStudents = conn.prepareStatement("SELECT * FROM students");
-			loadStudentById = conn.prepareStatement("SELECT * FROM students WHERE id =?");
-			updateStudentById = conn.prepareStatement("UPDATE `students` SET `name`=?, `surname`=?, `date`=?, `group`=? WHERE `id`=?");
-			createStudent = conn.prepareStatement("INSERT INTO `students` (`name`, `surname`, `date`, `group`) VALUES (?, ?, ?, ?)");
-			createDiscipline = conn.prepareStatement("INSERT INTO `disciplines` (`disciplines`) VALUES (?)");
-			updateDisciplineById = conn.prepareStatement("UPDATE disciplines SET disciplines=? WHERE id=?");
-			deleteDisciplineById = conn.prepareStatement("DELETE FROM disciplines WHERE id=?");
-			deleteStudentById = conn.prepareStatement("DELETE FROM students WHERE id=?");
-			loadMarksById=conn.prepareStatement("SELECT * FROM marks LEFT join terms_disceplines on marks.id_terms_disceplines=terms_disceplines.id join disciplines on terms_disceplines.id_disceplines=disciplines.id join terms on terms_disceplines.id_terms=terms.id where id_student=? and terms.id=?");
-			averageMarks=conn.prepareStatement("SELECT avg(mark) FROM marks LEFT join terms_disceplines on marks.id_terms_disceplines=terms_disceplines.id join disciplines on terms_disceplines.id_disceplines=disciplines.id join terms on terms_disceplines.id_terms=terms.id where id_student=? and terms.id=?");
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
+    private void closePreparedStatements() {
+        try {
+            loadAllRoles.close();
+            addPrecence.close();
+            getIDMat.close();
+            sreachPrecence.close();
+            sreachPrecenceIf.close();
+            getLength.close();
+            updateLength.close();
+            addMat.close();
+            insertWriteOf.close();
+            getWriteOf.close();
+            updateWriteOf.close();
+            addWriteOf.close();
+            updateWriteOfPrecence.close();
+            deleteWriteOfPrecence.close();
+            loadAllLogins.close();
+            loadAccountByLogin.close();
+            loadRolesById.close();
+            getIdAccountRoles.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public List<Role> getAllRoles(){
+        rs = null;
+        List<Role> result = new LinkedList<Role>();
+        try {
+            rs = loadAllRoles.executeQuery();
+            while (rs.next()){
+                Role r = new Role();
+                r.setId(rs.getInt("id"));
+                r.setName(rs.getString("role"));
+                result.add(r);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
-	private void closePreparedStatements() {
-		try {
-			loadAllRoles.close();
-			loadAllTerms.close();
-			getAllTerms.close();
-			loadAllLogins.close();
-			loadAccountByLogin.close();
-			loadRolesById.close();
-			getIdAccountRoles.close();
-			getDisciplines.close();
-			getDisciplineById.close();
-			loadAllStudents.close();
-			loadStudentById.close();
-			createStudent.close();
-			updateStudentById.close();
-			deleteStudentById.close();
-			loadMarksById.close();
-			createDiscipline.close();
-			updateDisciplineById.close();
-			deleteDisciplineById.close();
-			averageMarks.close();
-			getTermById.close();
-			addTerm.close();
-			updateTermById.close();
-			deleteTermById.close();
-			putAllDisciplineTerms.close();
-			putDisceplineMark.close();
-			updateMark.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
+        return result;
 
-	public List<Role> getAllRoles(){
-		rs = null;
-		List<Role> result = new LinkedList<Role>();
-		try {
-			rs = loadAllRoles.executeQuery();
-			while (rs.next()){
-				Role r = new Role();
-				r.setId(rs.getInt("id"));
-				r.setName(rs.getString("role"));
-				result.add(r);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		
-		return result;
-		
-	}
-	public Term getTermById(int id){
-		rs = null;
-		Term r = new Term();
-		try {
-			getTermById.setInt(1, id);
-			rs = getTermById.executeQuery();
-			while (rs.next()){
-				r.setId(rs.getInt("id"));
-				r.setDuration(rs.getInt("duration"));
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return r;
-	}
-	public boolean addTerm(int dur, List<Integer> disc){
-		rs = null;
-		int id=0;
-		try {
-			addTerm.setInt(1,dur);
-			addTerm.executeUpdate();
-			rs = lastInsertID.executeQuery();
-			while (rs.next()){
-				id=rs.getInt("LAST_INSERT_ID()");
-			}
-			rs=null;
-			for(int i=0; i<disc.size(); i++) {
-				putAllDisciplineTerms.setInt(1, id);
-				putAllDisciplineTerms.setInt(2, disc.get(i));
-				putAllDisciplineTerms.executeUpdate();
-				rs = lastInsertID.executeQuery();
-				int lastId=0;
-				while (rs.next()){
-					lastId=rs.getInt("LAST_INSERT_ID()");
-				}
-				List<Student> stud=getAllStudents();
-				for(int j=0; j<stud.size(); j++ ) {
-					putDisceplineMark.setInt(1, stud.get(j).getId());
-					putDisceplineMark.setInt(2, lastId);
-					putDisceplineMark.executeUpdate();
-				}
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return false;
-		}
-		return true;
-	}
-	public boolean updateTerm(int id, int dur, List<Integer> disc){
-		try {
-			updateTermById.setInt(1,dur);
-			updateTermById.setInt(2,id);
-			updateTermById.executeUpdate();
-			deleteAllDisciplineTerms.setInt(1, id);
-			deleteAllDisciplineTerms.execute();
-			for(int i=0; i<disc.size(); i++) {
-				putAllDisciplineTerms.setInt(1, id);
-				putAllDisciplineTerms.setInt(2, disc.get(i));
-				putAllDisciplineTerms.executeUpdate();
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return false;
-		}
-		return true;
-	}
-	public boolean updateMark(int id, int mark){
-		try {
-			updateMark.setInt(1,mark);
-			updateMark.setInt(2,id);
-			updateMark.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return false;
-		}
-		return true;
-	}
-	public boolean deleteTermById(int id){
-		try {
-			deleteAllDisciplineTerms.setInt(1, id);
-			deleteAllDisciplineTerms.execute();
-			deleteTermById.setInt(1,id);
-			deleteTermById.execute();
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return false;
-		}
-		return true;
-	}
-	public List<Discipline> getAllTerms(Integer id){
-		rs = null;
-		List<Discipline> result = new LinkedList<Discipline>();
-		try {
-			loadAllTerms.setInt(1,id);
-			rs = loadAllTerms.executeQuery();
-			while (rs.next()){
-				Discipline discipline = new Discipline();
-				discipline.setId(rs.getInt("id"));
-				discipline.setName(rs.getString("disciplines"));
-				result.add(discipline);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return result;
-	}
-	public List<Student> getAllStudents(){
-		rs = null;
-		List<Student> result = new LinkedList<Student>();
-		try {
-			rs = loadAllStudents.executeQuery();
-			while (rs.next()){
-				Student r = new Student();
-				r.setId(rs.getInt("id"));
-				r.setName(rs.getString("name"));
-				r.setSurname(rs.getString("surname"));
-				r.setDate(rs.getDate("date"));
-				r.setGroup(rs.getString("group"));
-				result.add(r);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+    }
+    public List<Account> getAllLogins(){
+        rs = null;
+        List<Account> result = new LinkedList<Account>();
+        try {
+            rs = loadAllLogins.executeQuery();
 
-		return result;
+            while (rs.next()){
+                Account account = new Account();
+                account.setUsername(rs.getString("login"));
+                account.setId(rs.getInt("id"));
+                //account.setPassword(rs.getString("password"));
+                result.add(account);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return result;
 
-	}
-	public List<Term> loadAllTerms(){
-		rs = null;
-		List<Term> result = new LinkedList<Term>();
-		try {
-			rs = getAllTerms.executeQuery();
-			while (rs.next()){
-				Term term = new Term();
-				term.setId(rs.getInt("id"));
-				term.setDuration(rs.getInt("duration"));
-				result.add(term);
-				System.out.println("id-"+term.getId());
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return result;
-	}
-	
-	public List<Account> getAllLogins(){
-		rs = null;
-		List<Account> result = new LinkedList<Account>();
-		try {
-			rs = loadAllLogins.executeQuery();
-			
-			while (rs.next()){
-				Account account = new Account();
-				account.setUsername(rs.getString("login"));
-				account.setId(rs.getInt("id"));
-				//account.setPassword(rs.getString("password"));
-				result.add(account);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}	
-		return result;
-		
-	}
-	
-	public Account getAccountByLogin(String login){
-		rs = null;
+    }
+
+    public Account getAccountByLogin(String login){
+        rs = null;
         // SELECT * FROM account WHERE login = ?
         Account result = new Account();
-		try {
-			loadAccountByLogin.setNString(1, login);
-			rs = loadAccountByLogin.executeQuery();
-			
-			while (rs.next()){
-			result.setId(rs.getInt("id"));
-			result.setUsername(rs.getString("login"));
-			result.setPassword(rs.getString("password"));
-			}
-		}
-		catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return result;
-		
-	}
-	public Double averageMarks(int studId, int termsId){
-		Double avr=null;
-		rs=null;
-		try {
-			averageMarks.setInt(1, studId);
-			averageMarks.setInt(2, termsId);
-			rs=averageMarks.executeQuery();
-			while(rs.next()){
-				avr=rs.getDouble("avg(mark)");
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-return avr;
-	}
-	public Map<Discipline,Marks> loadMarksById(int studId, int termsId){
-		rs=null;
-		Map<Discipline,Marks> mark = new LinkedHashMap<Discipline,Marks>();
-		try {
-			loadMarksById.setInt(1, studId);
-			loadMarksById.setInt(2, termsId);
-			rs=loadMarksById.executeQuery();
-			while(rs.next()){
-				Marks m =new Marks();
-				m.setId(rs.getInt("id"));
-				m.setId_pair_term_dicsipline(rs.getInt("id_terms_disceplines"));
-				m.setId_student(rs.getInt("id_student"));
-				m.setMark(rs.getInt("mark"));
-				Discipline d = new Discipline();
-				d.setId(rs.getInt("id_disceplines"));
-				d.setName(rs.getString("disciplines"));
-				mark.put(d,m);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+        try {
+            loadAccountByLogin.setNString(1, login);
+            rs = loadAccountByLogin.executeQuery();
 
-		return mark;
-	}
-	public List<Role> getRolesById(int id){
-		rs = null;
-		List<Role> result = new LinkedList<Role>();
-		try {
-			loadRolesById.setInt(1, id);
-			rs = loadRolesById.executeQuery();
-			
-			while (rs.next()){
-				Role role = new Role();
-				role.setId(rs.getInt("id"));
-				role.setName(rs.getString("role"));
-				result.add(role);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}		
-		return result;
-	}
-	public Student getStudentById(int id){
-		rs = null;
-		Student result = new Student();
-		try {
-			loadStudentById.setInt(1, id);
-			rs = loadStudentById.executeQuery();
-			while (rs.next()){
-				Date date=null;
-				Student r = new Student();
-				r.setId(rs.getInt("id"));
-				r.setName(rs.getString("name"));
-				r.setSurname(rs.getString("surname"));
-				r.setDate(rs.getDate("date"));
-				r.setGroup(rs.getString("group"));
-				result=r;
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return result;
-	}
-	public boolean updateStudentById(Student student){
-		try {
-			updateStudentById.setString(1,student.getName());
-			updateStudentById.setString(2,student.getSurname());
-			updateStudentById.setDate(3, new java.sql.Date(student.getDate().getTime()));
-			updateStudentById.setString(4,student.getGroup());
-			updateStudentById.setInt(5,student.getId());
-			updateStudentById.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return false;
-		}
-		return true;
-	}
-	public boolean deleteStudentById(int id){
-		try {
-			deleteStudentById.setInt(1,id);
-			deleteStudentById.execute();
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return false;
-		}
-		return true;
-	}
-	public boolean createDiscipline(Discipline disc){
-		try {
-			createDiscipline.setString(1,disc.getName());
-			createDiscipline.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return false;
-		}
-		return true;
-	}
-	public boolean updateDiscipline(Discipline disc){
-		try {
-			updateDisciplineById.setString(1,disc.getName());
-			updateDisciplineById.setInt(2,disc.getId());
-			updateDisciplineById.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return false;
-		}
-		return true;
-	}
-	public boolean deleteDisciplineById(int id){
-		try {
-			deleteDisciplineById.setInt(1,id);
-			deleteDisciplineById.execute();
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return false;
-		}
-		return true;
-	}
-	public boolean createStudent(Student student){
-		try {
-			createStudent.setString(1,student.getName());
-			createStudent.setString(2,student.getSurname());
-			createStudent.setDate(3, new java.sql.Date(student.getDate().getTime()));
-			createStudent.setString(4,student.getGroup());
-			createStudent.executeUpdate();
-			rs = lastInsertID.executeQuery();
-			int id=0;
-			while (rs.next()){
-				id=rs.getInt("LAST_INSERT_ID()");
-			}
-			List<Integer> disc=new LinkedList<Integer>();
-			rs=getAllDisciplineTerms.executeQuery();
-			while (rs.next()){
-				disc.add(rs.getInt("ID"));
-			}
-			for(int i=0; i<disc.size(); i++) {
-				putDisceplineMark.setInt(1, id);
-				putDisceplineMark.setInt(2, disc.get(i));
-				putDisceplineMark.executeUpdate();
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return false;
-		}
-		return true;
-	}
-	
-	public void close() {
-		closePreparedStatements();
-		try {
-			if (conn != null)
-				conn.close();
-		} catch (SQLException e) {
-			LOGGER.info("close() exeption " + e.getMessage());
-			e.printStackTrace();
-		}
-	}
+            while (rs.next()){
+                result.setId(rs.getInt("id"));
+                result.setUsername(rs.getString("login"));
+                result.setPassword(rs.getString("password"));
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return result;
 
-	public List<Integer> getIdAccountRoles(int idAccount) {
-		rs = null;
-		List<Integer> idAccountRoles = new ArrayList<Integer>();
-		try {
-			getIdAccountRoles.setInt(1, idAccount);
-			rs = getIdAccountRoles.executeQuery();
-			
-			while (rs.next()){
-				idAccountRoles.add(rs.getInt("id_role"));
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}		
-		return idAccountRoles;
-	}
-	
-	public List<Discipline> getDisciplines(){
-		rs = null;
-		List<Discipline> disciplinesList = new LinkedList<Discipline>();
-		try{
-			rs = getDisciplines.executeQuery();
-			while (rs.next()){
-				Discipline discipline = new Discipline();
-				discipline.setId(rs.getInt("id"));
-				discipline.setName(rs.getString("disciplines"));
-				disciplinesList.add(discipline);
-			}
-		}catch (SQLException e){
-			e.printStackTrace();
-		}
-		return disciplinesList;
-	}
-	
-	public Discipline getDisciplineById(int id){
-		rs = null;
-		Discipline discipline = new Discipline();
-		try {
-			getDisciplineById.setInt(1, id);
-			rs = getDisciplineById.executeQuery();
-			rs.next();
-			discipline.setId(id);
-			discipline.setName(rs.getString("disciplines"));
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return discipline;
-		
-	}
+    }
+    public List<Role> getRolesById(int id){
+        rs = null;
+        List<Role> result = new LinkedList<Role>();
+        try {
+            loadRolesById.setInt(1, id);
+            rs = loadRolesById.executeQuery();
+
+            while (rs.next()){
+                Role role = new Role();
+                role.setId(rs.getInt("id"));
+                role.setName(rs.getString("role"));
+                result.add(role);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+    public void close() {
+        closePreparedStatements();
+        try {
+            if (conn != null)
+                conn.close();
+        } catch (SQLException e) {
+            LOGGER.info("close() exeption " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    public List<Integer> getIdAccountRoles(int idAccount) {
+        rs = null;
+        List<Integer> idAccountRoles = new ArrayList<Integer>();
+        try {
+            getIdAccountRoles.setInt(1, idAccount);
+            rs = getIdAccountRoles.executeQuery();
+
+            while (rs.next()){
+                idAccountRoles.add(rs.getInt("id_role"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return idAccountRoles;
+    }
+    public Integer getIdMat(String codeName, int sizeRoll)throws SQLException{
+        rs = null;
+        int id=0;
+        try {
+            getIDMat.setString(1, codeName);
+            getIDMat.setInt(2, sizeRoll);
+            rs = getIDMat.executeQuery();
+            while (rs.next()){
+                id=rs.getInt("id");
+            }
+        } catch (SQLException e) {
+            throw new SQLException("SQL exception");
+        }
+        return id;
+    }
+   public void addPrecence(Precence precence)throws SQLException{
+       try {
+           addPrecence.setInt(1,precence.getName());
+           addPrecence.setInt(2,precence.getLen());
+           addPrecence.executeUpdate();
+       }catch (SQLException e) {
+           throw new SQLException("SQL exception");
+       }
+   }
+    public List<Precence> getPrecence(String codeName,int sizeRol, int stat)throws SQLException{
+        rs = null;
+        List<Precence> prec=new ArrayList<Precence>();
+        try {
+            sreachPrecence.setString(1,codeName);
+            sreachPrecence.setInt(2,sizeRol);
+            sreachPrecence.setInt(3,stat);
+            rs=sreachPrecence.executeQuery();
+            while (rs.next()){
+                Precence p=new Precence();
+                p.setId(rs.getInt("ID"));
+                p.setLen(rs.getInt("LEN"));
+                p.setName(rs.getInt("NAME"));
+                p.setStat(rs.getInt("STAT"));
+                prec.add(p);
+            }
+        }catch (SQLException e) {
+            throw new SQLException("SQL exception");
+        }
+        return prec;
+    }
+    public List<Precence> getPrecenceIf(String codeName,int sizeRol, int stat)throws SQLException{
+        rs = null;
+        List<Precence> prec1=new ArrayList<Precence>();
+        try {
+            sreachPrecenceIf.setString(1,codeName);
+            sreachPrecenceIf.setInt(2,sizeRol);
+            sreachPrecenceIf.setInt(3,stat);
+            rs=sreachPrecenceIf.executeQuery();
+            while (rs.next()){
+                Precence p=new Precence();
+                p.setId(rs.getInt("ID"));
+                p.setLen(rs.getInt("LEN"));
+                p.setName(rs.getInt("NAME"));
+                p.setStat(rs.getInt("STAT"));
+                prec1.add(p);
+            }
+        }catch (SQLException e) {
+            throw new SQLException("SQL exception");
+        }
+        return prec1;
+    }
+    public Integer getLen(int id)throws SQLException{
+        rs = null;
+        int len=0;
+        try {
+            getLength.setInt(1, id);
+            rs = getLength.executeQuery();
+            while (rs.next()){
+                len=rs.getInt("LEN");
+            }
+        } catch (SQLException e) {
+            throw new SQLException("SQL exception");
+        }
+        return len;
+    }
+    public void updateLen(int len, int id)throws SQLException{
+        try {
+            updateLength.setInt(1, len);
+            updateLength.setInt(2, id);
+            updateLength.executeUpdate();
+        }catch (SQLException e) {
+            throw new SQLException("SQL exception");
+        }
+    }
+        public void setWriteOf (int prec, int len, String comment)throws SQLException{
+            try {
+                insertWriteOf.setInt(1, prec);
+                insertWriteOf.setInt(2, len);
+                insertWriteOf.setString(3,comment);
+                insertWriteOf.executeUpdate();
+            }catch (SQLException e) {
+                throw new SQLException("SQL exception");
+            }
+    }
+    public Integer getWriteOf()throws SQLException{
+        int id=0;
+        try {
+        rs = getWriteOf.executeQuery();
+            while (rs.next()){
+                id=rs.getInt("ID");
+            }
+        }catch (SQLException e) {
+            throw new SQLException("SQL exception");
+        }
+        return id;
+    }
+    public void updateWriteOf(int type, int id)throws SQLException{
+        try {
+            updateWriteOf.setInt(1, type);
+            updateWriteOf.setInt(2, id);
+            updateWriteOf.executeUpdate();
+        }catch (SQLException e) {
+            throw new SQLException("SQL exception");
+        }
+    }
+    public void addWriteOf(WriteOff writeOf)throws SQLException{
+        try {
+        addWriteOf.setInt(1, writeOf.getPrecence());
+            addWriteOf.setInt(2, writeOf.getLen());
+            addWriteOf.setInt(3, writeOf.getTypeWriteOf());
+            addWriteOf.setString(4, writeOf.getComment());
+            addWriteOf.executeUpdate();
+        }catch (SQLException e) {
+            throw new SQLException("SQL exception");
+        }
+    }
+public void updateWriteOfPrecence(int prec, int id)throws SQLException{
+    try{
+        updateWriteOfPrecence.setInt(1,prec);
+        updateWriteOfPrecence.setInt(2, id);
+        updateWriteOfPrecence.executeUpdate();
+    }catch (SQLException e) {
+        throw new SQLException("SQL exception");
+    }
+    }
+    public void deleteWriteOf(int id) throws SQLException{
+        try{
+            deleteWriteOfPrecence.setInt(1,id);
+            deleteWriteOfPrecence.execute();
+        }catch (SQLException e) {
+            throw new SQLException("SQL exception");
+        }
+    }
 }

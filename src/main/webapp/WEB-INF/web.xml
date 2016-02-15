@@ -1,353 +1,600 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
-	<display-name>Webtasks demo application</display-name>
+  <display-name>Archetype Created Web Application</display-name>
 
-	<context-param>
-		<param-name>developer</param-name>
-		<param-value>nata</param-value>
-	</context-param>
+<context-param>
+<param-name>developer</param-name>
+<param-value>acm-unit</param-value>
+</context-param>
 
-	<!-- Listeners -->
-	<listener>
-		<listener-class>listeners.WebtasksContextListener
-		</listener-class>
-	</listener>
-
-	<listener>
-		<listener-class>listeners.WebtasksSessionListener
-		</listener-class>
-	</listener>
-
-
-
-	<!-- Servlets -->
-	<servlet>
-		<servlet-name>LoginController</servlet-name>
-		<servlet-class>controllers.LoginController
-        </servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>LoginController</servlet-name>
-		<url-pattern>/login.php</url-pattern>
-	</servlet-mapping>
-
-    <servlet>
-        <servlet-name>LogoutController</servlet-name>
-        <servlet-class>controllers.LogoutController
-        </servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>LogoutController</servlet-name>
-        <url-pattern>/logout.php</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>HomePageController</servlet-name>
-        <servlet-class>controllers.HomePageController
-        </servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>HomePageController</servlet-name>
-        <url-pattern>/student/home.php</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>HomePageController</servlet-name>
-        <url-pattern>/admin/home.php</url-pattern>
-    </servlet-mapping>
-
-	<servlet>
-		<servlet-name>StudentPageController</servlet-name>
-		<servlet-class>controllers.StudentPageController
-		</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>StudentPageController</servlet-name>
-		<url-pattern>/student/student/students.php</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>StudentPageController</servlet-name>
-		<url-pattern>/admin/student/students.php</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>StudentProgressController</servlet-name>
-		<servlet-class>controllers.StudentProgressController
-		</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>StudentProgressController</servlet-name>
-		<url-pattern>/student/student/studentProgress.php</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>StudentProgressController</servlet-name>
-		<url-pattern>/admin/student/studentProgress.php</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>MarkModifyController</servlet-name>
-		<servlet-class>controllers.MarkModifyController
-		</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>MarkModifyController</servlet-name>
-		<url-pattern>/student/mark/markModify.php</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>MarkModifyController</servlet-name>
-		<url-pattern>/admin/mark/markModify.php</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>MarkUpdate</servlet-name>
-		<servlet-class>controllers.MarkUpdate
-		</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>MarkUpdate</servlet-name>
-		<url-pattern>/student/mark/markUpdate.php</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>MarkUpdate</servlet-name>
-		<url-pattern>/admin/mark/markUpdate.php</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>MarkController</servlet-name>
-		<servlet-class>controllers.MarkController
-		</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>MarkController</servlet-name>
-		<url-pattern>/student/mark/mark.php</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>MarkController</servlet-name>
-		<url-pattern>/admin/mark/mark.php</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>StudentCreateController</servlet-name>
-		<servlet-class>controllers.StudentCreateController
-		</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>StudentCreateController</servlet-name>
-		<url-pattern>/student/student/studentCreate.php</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>StudentCreateController</servlet-name>
-		<url-pattern>/admin/student/studentCreate.php</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>DisciplineCreatingController</servlet-name>
-		<servlet-class>controllers.DisciplineCreatingController
-		</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>DisciplineCreatingController</servlet-name>
-		<url-pattern>/student/discipline/disciplineCreating.php</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>DisciplineCreatingController</servlet-name>
-		<url-pattern>/admin/discipline/disciplineCreating.php</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>DisciplineModifyController</servlet-name>
-		<servlet-class>controllers.DisciplineModifyController
-		</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>DisciplineModifyController</servlet-name>
-		<url-pattern>/student/discipline/disciplineModify.php</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>DisciplineModifyController</servlet-name>
-		<url-pattern>/admin/discipline/disciplineModify.php</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>DisciplineDeleteController</servlet-name>
-		<servlet-class>controllers.DisciplineDeleteController
-		</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>DisciplineDeleteController</servlet-name>
-		<url-pattern>/student/discipline/disciplineDelete.php</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>DisciplineDeleteController</servlet-name>
-		<url-pattern>/admin/discipline/disciplineDelete.php</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>TermModifyController</servlet-name>
-		<servlet-class>controllers.TermModifyController
-		</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>TermModifyController</servlet-name>
-		<url-pattern>/student/term/termModify.php</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>TermModifyController</servlet-name>
-		<url-pattern>/admin/term/termModify.php</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>TermDeleteController</servlet-name>
-		<servlet-class>controllers.TermDeleteController
-		</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>TermDeleteController</servlet-name>
-		<url-pattern>/student/term/termDelete.php</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>TermDeleteController</servlet-name>
-		<url-pattern>/admin/term/termDelete.php</url-pattern>
-	</servlet-mapping>
-
-
-	<servlet>
-	<servlet-name>TermCreateController</servlet-name>
-	<servlet-class>controllers.TermCreateController
-	</servlet-class>
+<servlet>
+<servlet-name>controlServlet</servlet-name>
+<servlet-class>controllers.HomeController</servlet-class>
 </servlet>
-	<servlet-mapping>
-		<servlet-name>TermCreateController</servlet-name>
-		<url-pattern>/student/term/termCreate.php</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>TermCreateController</servlet-name>
-		<url-pattern>/admin/term/termCreate.php</url-pattern>
-	</servlet-mapping>
 
-	<servlet>
-		<servlet-name>TermCreation</servlet-name>
-		<servlet-class>controllers.TermCreation
-		</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>TermCreation</servlet-name>
-		<url-pattern>/student/term/termCreation.php</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>TermCreation</servlet-name>
-		<url-pattern>/admin/term/termCreation.php</url-pattern>
-	</servlet-mapping>
+<servlet-mapping>
+<servlet-name>controlServlet</servlet-name>
+<url-pattern>*.html</url-pattern>
+</servlet-mapping>
 
-	<servlet>
-		<servlet-name>StudentModifyController</servlet-name>
-		<servlet-class>controllers.StudentModifyController
-		</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>StudentModifyController</servlet-name>
-		<url-pattern>/student/student/studentModify.php</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>StudentModifyController</servlet-name>
-		<url-pattern>/admin/student/studentModify.php</url-pattern>
-	</servlet-mapping>
+<servlet>
+<servlet-name>HomeController</servlet-name>
+<servlet-class>controllers.HomeController
+</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>HomeController</servlet-name>
+<url-pattern>/admin/home.php</url-pattern>
+</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>HomeController</servlet-name>
+    <url-pattern>/user/home.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>HomeController</servlet-name>
+    <url-pattern>/home.php</url-pattern>
+  </servlet-mapping>
 
-	<servlet>
-		<servlet-name>StudentDeleteController</servlet-name>
-		<servlet-class>controllers.StudentDeleteController
-		</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>StudentDeleteController</servlet-name>
-		<url-pattern>/student/student/studentDelete.php</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>StudentDeleteController</servlet-name>
-		<url-pattern>/admin/student/studentDelete.php</url-pattern>
-	</servlet-mapping>
+<servlet>
+<servlet-name>AutoController</servlet-name>
+<servlet-class>controllers.AutoController
+</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>AutoController</servlet-name>
+  <url-pattern>/admin/auto.php</url-pattern>
+</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AutoController</servlet-name>
+    <url-pattern>/user/auto.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AutoController</servlet-name>
+    <url-pattern>/auto.php</url-pattern>
+  </servlet-mapping>
 
-	<servlet>
-		<servlet-name>DisciplineController</servlet-name>
-		<servlet-class>controllers.DisciplineController
-		</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>DisciplineController</servlet-name>
-		<url-pattern>/admin/discipline/disciplines.php</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>DisciplineController</servlet-name>
-		<url-pattern>/student/discipline/disciplines.php</url-pattern>
-	</servlet-mapping>
+<servlet>
+<servlet-name>ServiceController</servlet-name>
+<servlet-class>controllers.ServiceController
+</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>ServiceController</servlet-name>
+<url-pattern>/admin/service.php</url-pattern>
+</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServiceController</servlet-name>
+    <url-pattern>/user/service.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServiceController</servlet-name>
+    <url-pattern>/service.php</url-pattern>
+  </servlet-mapping>
+
+<servlet>
+<servlet-name>ServicesController</servlet-name>
+<servlet-class>controllers.ServicesController
+</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>ServicesController</servlet-name>
+<url-pattern>/admin/services.php</url-pattern>
+</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServicesController</servlet-name>
+    <url-pattern>/user/services.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServicesController</servlet-name>
+    <url-pattern>/services.php</url-pattern>
+  </servlet-mapping>
+
+<servlet>
+<servlet-name>OurAutoCenterController</servlet-name>
+<servlet-class>controllers.OurAutoCenterController
+</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>OurAutoCenterController</servlet-name>
+<url-pattern>/admin/ourAutoCenter.php</url-pattern>
+</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OurAutoCenterController</servlet-name>
+    <url-pattern>/user/ourAutoCenter.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OurAutoCenterController</servlet-name>
+    <url-pattern>/ourAutoCenter.php</url-pattern>
+  </servlet-mapping>
+
+<servlet>
+<servlet-name>MicraController</servlet-name>
+<servlet-class>controllers.MicraController
+</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>MicraController</servlet-name>
+<url-pattern>/admin/micra.php</url-pattern>
+</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MicraController</servlet-name>
+    <url-pattern>/user/micra.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MicraController</servlet-name>
+    <url-pattern>/micra.php</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>MicraViewController</servlet-name>
+    <servlet-class>controllers.MicraViewController
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MicraViewController</servlet-name>
+    <url-pattern>/admin/micraView.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MicraViewController</servlet-name>
+    <url-pattern>/user/micraView.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MicraViewController</servlet-name>
+    <url-pattern>/micraView.php</url-pattern>
+  </servlet-mapping>
 
 
-	<servlet>
-		<servlet-name>TermsController</servlet-name>
-		<servlet-class>controllers.TermsController
-		</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>TermsController</servlet-name>
-		<url-pattern>/admin/term/terms.php</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>TermsController</servlet-name>
-		<url-pattern>/student/term/terms.php</url-pattern>
-	</servlet-mapping>
+  <servlet>
+    <servlet-name>MicraSelectColorController</servlet-name>
+    <servlet-class>controllers.MicraSelectColorController
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MicraSelectColorController</servlet-name>
+    <url-pattern>/admin/micraSelectColor.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MicraSelectColorController</servlet-name>
+    <url-pattern>/user/micraSelectColor.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MicraSelectColorController</servlet-name>
+    <url-pattern>/micraSelectColor.php</url-pattern>
+  </servlet-mapping>
+
+<servlet>
+  <servlet-name>SentraController</servlet-name>
+  <servlet-class>controllers.SentraController
+  </servlet-class>
+</servlet>
+  <servlet-mapping>
+    <servlet-name>SentraController</servlet-name>
+    <url-pattern>/admin/sentra.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SentraController</servlet-name>
+    <url-pattern>/user/sentra.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SentraController</servlet-name>
+    <url-pattern>/sentra.php</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>SentraViewController</servlet-name>
+    <servlet-class>controllers.SentraViewController
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SentraViewController</servlet-name>
+    <url-pattern>/admin/sentraView.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SentraViewController</servlet-name>
+    <url-pattern>/user/sentraView.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SentraViewController</servlet-name>
+    <url-pattern>/sentraView.php</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>SentraSelectColorController</servlet-name>
+    <servlet-class>controllers.SentraSelectColorController
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SentraSelectColorController</servlet-name>
+    <url-pattern>/admin/sentraSelectColor.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SentraSelectColorController</servlet-name>
+    <url-pattern>/user/sentraSelectColor.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SentraSelectColorController</servlet-name>
+    <url-pattern>/sentraSelectColor.php</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>JukeController</servlet-name>
+    <servlet-class>controllers.JukeController
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>JukeController</servlet-name>
+  <url-pattern>/admin/juke.php</url-pattern>
+</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>JukeController</servlet-name>
+    <url-pattern>/user/juke.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>JukeController</servlet-name>
+    <url-pattern>/juke.php</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>JukeSelectColorController</servlet-name>
+    <servlet-class>controllers.JukeSelectColorController
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>JukeSelectColorController</servlet-name>
+    <url-pattern>/admin/jukeSelectColor.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>JukeSelectColorController</servlet-name>
+    <url-pattern>/user/jukeSelectColor.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>JukeSelectColorController</servlet-name>
+    <url-pattern>/jukeSelectColor.php</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>JukeViewController</servlet-name>
+    <servlet-class>controllers.JukeViewController
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>JukeViewController</servlet-name>
+    <url-pattern>/admin/jukeView.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>JukeViewController</servlet-name>
+    <url-pattern>/user/jukeView.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>JukeViewController</servlet-name>
+    <url-pattern>/jukeView.php</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>PatrolController</servlet-name>
+    <servlet-class>controllers.PatrolController
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PatrolController</servlet-name>
+    <url-pattern>/admin/patrol.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PatrolController</servlet-name>
+    <url-pattern>/user/patrol.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PatrolController</servlet-name>
+    <url-pattern>/patrol.php</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>PatrolViewController</servlet-name>
+    <servlet-class>controllers.PatrolViewController
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PatrolViewController</servlet-name>
+    <url-pattern>/admin/patrolView.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PatrolViewController</servlet-name>
+    <url-pattern>/user/patrolView.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PatrolViewController</servlet-name>
+    <url-pattern>/patrolView.php</url-pattern>
+  </servlet-mapping>
 
 
-	<servlet>
-		<servlet-name>ErrorController</servlet-name>
-		<servlet-class>controllers.ErrorController
-		</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>ErrorController</servlet-name>
-		<url-pattern>/error.php</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>ErrorController</servlet-name>
-		<url-pattern>/pageNotFound.php</url-pattern>
-	</servlet-mapping>
+  <servlet>
+    <servlet-name>PatrolSelectColorController</servlet-name>
+    <servlet-class>controllers.PatrolSelectColorController
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PatrolSelectColorController</servlet-name>
+    <url-pattern>/admin/patrolSelectColor.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PatrolSelectColorController</servlet-name>
+    <url-pattern>/user/patrolSelectColor.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PatrolSelectColorController</servlet-name>
+    <url-pattern>/patrolSelectColor.php</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>QashqaiController</servlet-name>
+    <servlet-class>controllers.QashqaiController
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QashqaiController</servlet-name>
+    <url-pattern>/admin/qashqai.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QashqaiController</servlet-name>
+    <url-pattern>/user/qashqai.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QashqaiController</servlet-name>
+    <url-pattern>/qashqai.php</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>QashqaiSelectColorController</servlet-name>
+    <servlet-class>controllers.QashqaiSelectColorController
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QashqaiSelectColorController</servlet-name>
+    <url-pattern>/admin/qashqaiSelectColor.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QashqaiSelectColorController</servlet-name>
+    <url-pattern>/user/qashqaiSelectColor.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QashqaiSelectColorController</servlet-name>
+    <url-pattern>/qashqaiSelectColor.php</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>QashqaiViewController</servlet-name>
+    <servlet-class>controllers.QashqaiViewController
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QashqaiViewController</servlet-name>
+    <url-pattern>/admin/qashqaiView.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QashqaiViewController</servlet-name>
+    <url-pattern>/user/qashqaiView.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QashqaiViewController</servlet-name>
+    <url-pattern>/qashqaiView.php</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>XTrailController</servlet-name>
+    <servlet-class>controllers.XTrailController
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>XTrailController</servlet-name>
+    <url-pattern>/admin/xTrail.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  <servlet-name>XTrailController</servlet-name>
+  <url-pattern>/user/xTrail.php</url-pattern>
+</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>XTrailController</servlet-name>
+    <url-pattern>/xTrail.php</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>XtrailSelectColorController</servlet-name>
+    <servlet-class>controllers.XtrailSelectColorController
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>XtrailSelectColorController</servlet-name>
+    <url-pattern>/admin/xTrailSelectColor.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>XtrailSelectColorController</servlet-name>
+    <url-pattern>/user/xTrailSelectColor.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>XtrailSelectColorController</servlet-name>
+    <url-pattern>/xTrailSelectColor.php</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>XtrailViewController</servlet-name>
+    <servlet-class>controllers.XtrailViewController
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>XtrailViewController</servlet-name>
+    <url-pattern>/admin/xTrailView.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>XtrailViewController</servlet-name>
+    <url-pattern>/user/xTrailView.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>XtrailViewController</servlet-name>
+    <url-pattern>/xTrailView.php</url-pattern>
+  </servlet-mapping>
 
 
-	<!-- Filters -->
+  <servlet>
+  <servlet-name>MuranoController</servlet-name>
+  <servlet-class>controllers.MuranoController
+  </servlet-class>
+</servlet>
+  <servlet-mapping>
+    <servlet-name>MuranoController</servlet-name>
+    <url-pattern>/admin/murano.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MuranoController</servlet-name>
+    <url-pattern>/user/murano.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MuranoController</servlet-name>
+    <url-pattern>/murano.php</url-pattern>
+  </servlet-mapping>
 
+  <servlet>
+    <servlet-name>MuranoViewController</servlet-name>
+    <servlet-class>controllers.MuranoViewController
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MuranoViewController</servlet-name>
+    <url-pattern>/admin/muranoView.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MuranoViewController</servlet-name>
+    <url-pattern>/user/muranoView.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MuranoViewController</servlet-name>
+    <url-pattern>/muranoView.php</url-pattern>
+  </servlet-mapping>
 
-	<filter>
-		<filter-name>WebtasksCharsetFilter</filter-name>
-		<filter-class>filters.WebtasksCharsetFilter
-		</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>WebtasksCharsetFilter</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
+  <servlet>
+    <servlet-name>MuranoSelectColorController</servlet-name>
+    <servlet-class>controllers.MuranoSelectColorController
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MuranoSelectColorController</servlet-name>
+    <url-pattern>/admin/muranoSelectColor.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MuranoSelectColorController</servlet-name>
+    <url-pattern>/user/muranoSelectColor.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MuranoSelectColorController</servlet-name>
+    <url-pattern>/muranoSelectColor.php</url-pattern>
+  </servlet-mapping>
 
-	<error-page>
-		<error-code>404</error-code>
-		<location>/pageNotFound.php</location>
-	</error-page>
+  <servlet>
+    <servlet-name>ContactsController</servlet-name>
+    <servlet-class>controllers.ContactsController
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ContactsController</servlet-name>
+    <url-pattern>/admin/contacts.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ContactsController</servlet-name>
+    <url-pattern>/user/contacts.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ContactsController</servlet-name>
+    <url-pattern>/contacts.php</url-pattern>
+  </servlet-mapping>
 
-	<error-page>
-		<error-code>500</error-code>
-		<location>/error.php</location>
-	</error-page>
+  <servlet>
+    <servlet-name>GuaranteeController</servlet-name>
+    <servlet-class>controllers.GuaranteeController
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GuaranteeController</servlet-name>
+    <url-pattern>/admin/guarantee.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GuaranteeController</servlet-name>
+    <url-pattern>/user/guarantee.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GuaranteeController</servlet-name>
+    <url-pattern>/guarantee.php</url-pattern>
+  </servlet-mapping>
 
-	<error-page>
-		<exception-type>java.lang.Exception</exception-type>
-		<location>/error.php</location>
-	</error-page>
+  <servlet>
+  <servlet-name>AfterSalesController</servlet-name>
+  <servlet-class>controllers.AfterSalesController
+  </servlet-class>
+</servlet>
+  <servlet-mapping>
+    <servlet-name>AfterSalesController</servlet-name>
+    <url-pattern>/admin/afterSales.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AfterSalesController</servlet-name>
+    <url-pattern>/user/afterSales.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AfterSalesController</servlet-name>
+    <url-pattern>/afterSales.php</url-pattern>
+  </servlet-mapping>
 
-	<session-config>
-		<session-timeout>30</session-timeout>
-	</session-config>
+  <servlet>
+    <servlet-name>HelpController</servlet-name>
+    <servlet-class>controllers.HelpController
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HelpController</servlet-name>
+    <url-pattern>/admin/help.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>HelpController</servlet-name>
+    <url-pattern>/user/help.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>HelpController</servlet-name>
+    <url-pattern>/help.php</url-pattern>
+  </servlet-mapping>
 
-	<welcome-file-list>
-		<welcome-file>index.jsp</welcome-file>
-	</welcome-file-list>
+  <servlet>
+    <servlet-name>PartsController</servlet-name>
+    <servlet-class>controllers.PartsController
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PartsController</servlet-name>
+    <url-pattern>/admin/parts.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PartsController</servlet-name>
+    <url-pattern>/user/parts.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PartsController</servlet-name>
+    <url-pattern>/parts.php</url-pattern>
+  </servlet-mapping>
 
+  <servlet>
+    <servlet-name>LoyaltyController</servlet-name>
+    <servlet-class>controllers.LoyaltyController
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoyaltyController</servlet-name>
+    <url-pattern>/admin/loyalty.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoyaltyController</servlet-name>
+    <url-pattern>/user/loyalty.php</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoyaltyController</servlet-name>
+    <url-pattern>/loyalty.php</url-pattern>
+  </servlet-mapping>
 </web-app>
