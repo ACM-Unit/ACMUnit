@@ -9,8 +9,8 @@
                 <li><a href="${CONTEXT}/jukeSelectColor.php">Выбор цвета</a></li>
                 <li><a href="#">360 градусов</a></li>
                 <li><a href="#">Галерея</a></li>
-                <li><a href="" download="pdf/Juke_MC.pdf">Скачать прайс</a></li>
-                <li><a href="" download="pdf/Juke.pdf">Скачать брошюру</a></li>
+                <li><a href="pdf/Juke_MC.pdf" download>Скачать прайс</a></li>
+                <li><a href="pdf/Juke.pdf" download>Скачать брошюру</a></li>
             </ul>
         </li>
     </ul>

@@ -9,8 +9,8 @@
                 <li><a href="/qashqaiSelectColor.php">Выбор цвета</a></li>
                 <li><a href="#">360 градусов</a></li>
                 <li><a href="#">Галерея</a></li>
-                <li><a href="" download="pdf/Qashqai.pdf">Скачать прайс</a></li>
-                <li><a href="" download="pdf/QQ_New.pdf">Скачать брошюру</a></li>
+                <li><a href="pdf/Qashqai.pdf" download>Скачать прайс</a></li>
+                <li><a href="pdf/QQ_New.pdf" download>Скачать брошюру</a></li>
             </ul>
         </li>
     </ul>

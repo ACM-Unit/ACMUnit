@@ -28,7 +28,7 @@
                 <li> моб.: (066) 68-11-371</li>
             </ul>
             <br>
-            e-mail: <b>dprikhodko@outlook.com </b>
+            e-mail: <b>dprikhodko@nissan-sumy.com.ua </b>
             <h4> <b>
                 <br>
             </b> </h4>
@@ -37,7 +37,7 @@
 
             <p>тел.: (0542) 679-259
                 <br>
-                e-mail: <b>autoplus5@i.ua</b></p>
+                e-mail: <b>emischenko@nissan-sumy.com.ua</b></p>
 
             <ul>
                 <li>Пн - Пт с <strong>9:00</strong> до <b>18:00</b></li>
@@ -73,7 +73,7 @@
                     <li> моб.: (066) 68-11-371</li>
                 </ul>
                 <br>
-                e-mail: <b>boschsumy@i.ua</b> </div>
+                e-mail: <b>s.kulbachny@nissan-sumy.com.ua</b> </div>
 
         </div>
 

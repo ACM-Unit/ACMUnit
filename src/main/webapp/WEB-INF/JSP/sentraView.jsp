@@ -10,8 +10,8 @@
                 <li><a href="/sentraSelectColor.php">Выбор цвета</a></li>
                 <li><a href="#">360 градусов</a></li>
                 <li><a href="#">Галерея</a></li>
-                <li><a href="" download="pdf/Sentra.pdf">Скачать прайс</a></li>
-                <li><a href="" download="pdf/Sentra_ua.pdf">Скачать брошюру</a></li>
+                <li><a href="pdf/Sentra.pdf" download>Скачать прайс</a></li>
+                <li><a href="pdf/Sentra_ua.pdf" download>Скачать брошюру</a></li>
             </ul>
         </li>
     </ul>

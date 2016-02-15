@@ -89,7 +89,7 @@
         </div>
         <div class="dealer-contacts">
 
-            <div>        тел.: (0542) 679-259     моб.: (066) 68-11-371</div>
+            <div>        тел.: (0542) 679-259     моб.: (066) 68-11-371 </div>
         </div>
         <div class="dealer-logo"><a href="/"><img style="margin-bottom: -5px; margin-top: -5px;" src="${CONTEXT}/index_files/logo2.png" alt="Авто плюс"></a><span>ОФИЦИАЛЬНЫЙ ДИЛЕР NISSAN В СУМАХ</span></div>
         <div class="top_menu">
