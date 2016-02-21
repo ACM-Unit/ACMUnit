@@ -74,7 +74,21 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 	cursor: pointer;
 	/* 3 */
 }
-
+.promo li a span {
+	text-transform: uppercase;
+	display: block;
+	font-weight: bold;
+	margin-top: 10px;
+	padding-left: 25px;
+	background: url(/index_files/arr.png) no-repeat 0px 2px;
+}
+.promo li {
+	text-align: left;
+	font-size: 12px;
+}
+.promo {
+	list-style: none;
+}
 /**
  * Re-set default cursor for disabled elements.
  */

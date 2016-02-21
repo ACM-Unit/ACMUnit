@@ -24,8 +24,16 @@
         <processorPath useClasspath="true" />
         <module name="webtasks" />
       </profile>
+      <profile default="false" name="Annotation profile for Nissan" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="Nissan" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Nissan" target="1.7" />
       <module name="webtasks" target="1.7" />
     </bytecodeTargetLevel>
   </component>

@@ -3,23 +3,21 @@
 <aside style="position: static; width: 200px;">
     <ul class="dropdown">
         <li  class="dropdown-top">
-            <a class="dropdown-top" width="200px" href="/qashqai.php">NISSAN QASHQAI</a>
+            <a class="dropdown-top" width="200px" href="${CONTEXT}/qashqai.jsp">NISSAN QASHQAI</a>
             <ul class="dropdown-inside">
-                <li><a href="/qashqaiView.php">Обзор модели</a></li>
-                <li><a href="/qashqaiSelectColor.php">Выбор цвета</a></li>
-                <li><a href="#">360 градусов</a></li>
-                <li><a href="#">Галерея</a></li>
-                <li><a href="pdf/QQ_New.pdf" download>Скачать прайс</a></li>
-                <li><a href="pdf/Qashqai.pdf" download>Скачать брошюру</a></li>
+                <li><a href="${CONTEXT}/qashqaiView">Обзор модели</a></li>
+                <li><a href="${CONTEXT}/qashqaiSelectColor">Выбор цвета</a></li>
+                <li><a href="${CONTEXT}/pdf/QQ_New.pdf" download>Скачать прайс</a></li>
+                <li><a href="${CONTEXT}/pdf/Qashqai.pdf" download>Скачать брошюру</a></li>
             </ul>
         </li>
     </ul>
 </aside>
 <article style=" padding-right: 100px; min-width: 600px;">
     <h1>Обзор модели NISSAN QASHQAI</h1>
-    <ul class="breadcrumb-navigation"><li><a href="/home.php" title="Главная">Главная</a></li><li>&nbsp;/&nbsp;</li><li><a href="/auto.php" title="Автомобили">Автомобили</a></li><li>&nbsp;/&nbsp;</li><li><span>Кроссоверы</span></li></ul>
+    <ul class="breadcrumb-navigation"><li><a href="${CONTEXT}/home.jsp" title="Главная">Главная</a></li><li>&nbsp;/&nbsp;</li><li><a href="${CONTEXT}/auto" title="Автомобили">Автомобили</a></li><li>&nbsp;/&nbsp;</li><li><span>Кроссоверы</span></li></ul>
 
-    <div align="justify"><img src="/index_files/qashqaiView.png" align="right" border="0" width="50%"><strong>Новый Nissan QASHQAI (Ниссан Кашкай)</strong> не просто выглядит надежным и элегантным — он в самом деле надежен и элегантен, ведь это его сущность. Компания Nissan создала первый в мире кроссовер, а сегодня представляет новое поколение <strong>Nissan QASHQAI.</strong>
+    <div align="justify"><img src="${CONTEXT}/index_files/qashqaiView.png" align="right" border="0" width="50%"><strong>Новый Nissan QASHQAI (Ниссан Кашкай)</strong> не просто выглядит надежным и элегантным — он в самом деле надежен и элегантен, ведь это его сущность. Компания Nissan создала первый в мире кроссовер, а сегодня представляет новое поколение <strong>Nissan QASHQAI.</strong>
         <br>
 
         <br>
@@ -46,8 +44,8 @@
         <br>
 
         <br>
-        <img src="/index_files/03_connect_350x220.jpg" align="right" border="0" width="50%" style="display: inline-block; padding: 5px">
-        <img src="/index_files/edito_pushstart02_350x220.jpg" align="right" border="0" width="50%" style="display: inline-block; padding: 5px">
+        <img src="${CONTEXT}/index_files/03_connect_350x220.jpg" align="right" border="0" width="50%" style="display: inline-block; padding: 5px">
+        <img src="${CONTEXT}/index_files/edito_pushstart02_350x220.jpg" align="right" border="0" width="50%" style="display: inline-block; padding: 5px">
         <br>
 
         <br>
@@ -75,8 +73,8 @@
         <br>
         Новый <strong>Nissan QASHQAI</strong> готов покорять любые дороги. И парковка для него — не помеха! Интеллектуальная система автоматической парковки Nissan помогает водителю осуществить необходимые маневры, чтобы быстро и легко поставить автомобиль на парковочное место. Кроме того, система определяет размер парковочного места и указывает, располагаете ли вы достаточным пространством, чтобы вы могли об этом не заботиться. Узнайте больше о системе Nissan Parking Assist.
         <br>
-        <img src="/index_files/edito_tft_350x220.jpg" align="right" border="0" width="50%" style="display: inline-block; padding: 5px">
-        <img src="/index_files/03_mf_avm_350x220.jpg" align="right" border="0" width="50%" style="display: inline-block; padding: 5px">
+        <img src="${CONTEXT}/index_files/edito_tft_350x220.jpg" align="right" border="0" width="50%" style="display: inline-block; padding: 5px">
+        <img src="${CONTEXT}/index_files/03_mf_avm_350x220.jpg" align="right" border="0" width="50%" style="display: inline-block; padding: 5px">
         <br>
         <strong>НОВОЕ ОПРЕДЕЛЕНИЕ ПОНЯТИЯ "ПЛАВНЫЙ ХОД"</strong>
         <br>
@@ -88,8 +86,8 @@
         <br>
         "Щит безопасности" нового <strong>Nissan QASHQAI</strong> представляет собой комплекс из восьми различных систем безопасности, которые сканируют и анализируют окружающую обстановку с помощью видеокамер и датчиков, обеспечивая водителю постоянное наблюдение, а, значит, полную уверенность и безопасность в любых ситуациях.
         <br>
-        <img src="/index_files/safetyshield_350x220.png" align="right" border="0" width="50%" style="display: inline-block; padding: 5px">
-        <img src="/index_files/traffic_sign_recognation_350x220.png" align="right" border="0" width="50%" style="display: inline-block; padding: 5px">
+        <img src="${CONTEXT}/index_files/safetyshield_350x220.png" align="right" border="0" width="50%" style="display: inline-block; padding: 5px">
+        <img src="${CONTEXT}/index_files/traffic_sign_recognation_350x220.png" align="right" border="0" width="50%" style="display: inline-block; padding: 5px">
 
     </div>
 

@@ -5,14 +5,14 @@
 
     <div class="page-picture">
 
-        <img id="bx_4052760665_38" src="/index_files/2f2701028d1cf55443f1e157c9f007e2.jpg" alt="Запасные части" title="Запасные части" border="0" width="100%">
+        <img id="bx_4052760665_38" src="${CONTEXT}/index_files/2f2701028d1cf55443f1e157c9f007e2.jpg" alt="Запасные части" title="Запасные части" border="0" width="100%">
 
     </div>
 
 
     <article>
         <h1>Купить оригинальные запасные части на автомобили Ниссан в Сумах и Украине.</h1>
-        <ul class="breadcrumb-navigation"><li><a href="/home.php" title="Главная">Главная</a></li><li>&nbsp;/&nbsp;</li><li><a href="/service.php" title="Сервис">Сервис</a></li><li>&nbsp;/&nbsp;</li><li><span>Запасные части</span></li></ul>
+        <ul class="breadcrumb-navigation"><li><a href="${CONTEXT}/home.jsp" title="Главная">Главная</a></li><li>&nbsp;/&nbsp;</li><li><a href="${CONTEXT}/service" title="Сервис">Сервис</a></li><li>&nbsp;/&nbsp;</li><li><span>Запасные части</span></li></ul>
         <div align="justify"><font color="black">
             <p><strong>Компания NISSAN выпускает высококачественные автомобили, используя наиболее продвинутые, высокотехнологичные стандарты качества. В первую очередь это относится к комплектующим из которых собираются все автомобили на заводах NISSAN в мире. Все оригинальные запасные части NISSAN, поставляемые на вторичный рынок, проходят тот же строгий отбор, что и комплектующие для конвейера. Мы знаем, как минимум, пять причин по которой вам гораздо лучше пользоваться только оригинальными запасными частями NISSAN.</strong></p>
         </font></div>

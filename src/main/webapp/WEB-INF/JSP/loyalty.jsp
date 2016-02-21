@@ -4,11 +4,11 @@
 
     <article style=" text-align: center">
         <h1>Программа лояльности от Nissan Finance у официального дилера Авто плюс! Ставка на 2% ниже от действующих условий.</h1>
-        <ul class="breadcrumb-navigation"><li><a href="/" title="Главная">Главная</a></li><li>&nbsp;/&nbsp;</li><li><a href="/company/" title="Наш автоцентр">Наш автоцентр</a></li><li>&nbsp;/&nbsp;</li><li><span>Программа лояльности</span></li></ul>
+        <ul class="breadcrumb-navigation"><li><a href="${CONTEXT}/home.jsp" title="Главная">Главная</a></li><li>&nbsp;/&nbsp;</li><li><a href="${CONTEXT}/ourAutoCenter" title="Наш автоцентр">Наш автоцентр</a></li><li>&nbsp;/&nbsp;</li><li><span>Программа лояльности</span></li></ul>
         <br>
 
         <div class="thirdFullSizeDisplay" style="width: 80%; margin: auto;">
-            <p><img src="/index_files/offer_test.par.0715.image.imgprocessing.gif.jpg" title="offer_test.Par.0715.Image.imgProcessing.gif.jpg" alt="offer_test.Par.0715.Image.imgProcessing.gif.jpg" align="middle" border="0" height="203" width="597"></p>
+            <p><img src="${CONTEXT}/index_files/offer_test.par.0715.image.imgprocessing.gif.jpg" title="offer_test.Par.0715.Image.imgProcessing.gif.jpg" alt="${CONTEXT}/offer_test.Par.0715.Image.imgProcessing.gif.jpg" align="middle" border="0" height="203" width="597"></p>
 
             <p align="justify"><strong>УВАЖАЕМЫЙ КЛИЕНТ!</strong>
                 <br>

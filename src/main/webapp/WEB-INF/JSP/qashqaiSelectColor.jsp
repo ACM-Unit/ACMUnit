@@ -4,14 +4,12 @@
 <aside style="position: static; width: 200px;">
     <ul class="dropdown">
         <li  class="dropdown-top">
-            <a class="dropdown-top" width="200px" href="/qashqai.php">NISSAN QASHQAI</a>
+            <a class="dropdown-top" width="200px" href="${CONTEXT}/qashqai.jsp">NISSAN QASHQAI</a>
             <ul class="dropdown-inside">
-                <li><a href="/qashqaiView.php">Обзор модели</a></li>
-                <li><a href="/qashqaiSelectColor.php">Выбор цвета</a></li>
-                <li><a href="#">360 градусов</a></li>
-                <li><a href="#">Галерея</a></li>
-                <li><a href="pdf/QQ_New.pdf" download>Скачать прайс</a></li>
-                <li><a href="pdf/Qashqai.pdf" download>Скачать брошюру</a></li>
+                <li><a href="${CONTEXT}/qashqaiView">Обзор модели</a></li>
+                <li><a href="${CONTEXT}/qashqaiSelectColor">Выбор цвета</a></li>
+                <li><a href="${CONTEXT}/pdf/QQ_New.pdf" download>Скачать прайс</a></li>
+                <li><a href="${CONTEXT}/pdf/Qashqai.pdf" download>Скачать брошюру</a></li>
             </ul>
         </li>
     </ul>

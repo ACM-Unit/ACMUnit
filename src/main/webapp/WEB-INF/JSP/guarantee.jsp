@@ -3,13 +3,13 @@
 
     <div class="page-picture">
 
-        <img id="bx_4052760665_34" src="/index_files/066faaba59a9b7ab43c825de6691106d.jpg" alt="Условия гарантии" title="Условия гарантии" border="0" width="100%">
+        <img id="bx_4052760665_34" src="${CONTEXT}/index_files/066faaba59a9b7ab43c825de6691106d.jpg" alt="Условия гарантии" title="Условия гарантии" border="0" width="100%">
 
     </div>
 
     <article>
         <h1>Условия гарантии</h1>
-        <ul class="breadcrumb-navigation"><li><a href="/home.php" title="Главная">Главная</a></li><li>&nbsp;/&nbsp;</li><li><a href="/service.php" title="Сервис">Сервис</a></li><li>&nbsp;/&nbsp;</li><li><span>Условия гарантии</span></li></ul>
+        <ul class="breadcrumb-navigation"><li><a href="${CONTEXT}/home.jsp" title="Главная">Главная</a></li><li>&nbsp;/&nbsp;</li><li><a href="${CONTEXT}/service" title="Сервис">Сервис</a></li><li>&nbsp;/&nbsp;</li><li><span>Условия гарантии</span></li></ul>
         <div align="justify"><font color="black">
             <p>Философия постоянного усовершенствования означает применение особого подхода к производству и обслуживанию автомобилей.</p>
 

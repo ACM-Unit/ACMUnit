@@ -1,13 +1,12 @@
 package controllers;
 
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by Admin on 13.12.2015.
- */
+@WebServlet(name = "HomeController", urlPatterns = {"/home", "admin/home", "user/home", "admin/home.jsp", "user/home.jsp", "/home.jsp" })
 public class HomeController extends AbstractWebtasksServletHandler {
     private final Map<Integer, String> mappings = new HashMap<Integer, String>();
     public HomeController() {

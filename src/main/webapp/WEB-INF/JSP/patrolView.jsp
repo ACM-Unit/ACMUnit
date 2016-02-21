@@ -4,23 +4,21 @@
 <aside style="position: static; width: 200px;">
     <ul class="dropdown">
         <li  class="dropdown-top">
-            <a class="dropdown-top" width="200px" href="/patrol.php">NISSAN MICRA</a>
+            <a class="dropdown-top" width="200px" href="${CONTEXT}/patrol.jsp">NISSAN MICRA</a>
             <ul class="dropdown-inside">
-                <li><a href="/patrolView.php">Обзор модели</a></li>
-                <li><a href="/patrolSelectColor.php">Выбор цвета</a></li>
-                <li><a href="#">360 градусов</a></li>
-                <li><a href="#">Галерея</a></li>
-                <li><a href="pdf/Patrol.pdf" download>Скачать прайс</a></li>
-                <li><a href="pdf/Patrol_ua.pdf" download>Скачать брошюру</a></li>
+                <li><a href="${CONTEXT}/patrolView">Обзор модели</a></li>
+                <li><a href="${CONTEXT}/patrolSelectColor">Выбор цвета</a></li>
+                <li><a href="${CONTEXT}/pdf/Patrol.pdf" download>Скачать прайс</a></li>
+                <li><a href="${CONTEXT}/pdf/Patrol_ua.pdf" download>Скачать брошюру</a></li>
             </ul>
         </li>
     </ul>
 </aside>
 <article style=" padding-right: 100px; min-width: 600px;">
     <h1>Обзор модели Nissan Patrol</h1>
-    <ul class="breadcrumb-navigation"><li><a href="/home.php" title="Главная">Главная</a></li><li>&nbsp;/&nbsp;</li><li><a href="/auto.php" title="Автомобили">Автомобили</a></li><li>&nbsp;/&nbsp;</li><li><span>Легковые автомобили</span></li></ul>
+    <ul class="breadcrumb-navigation"><li><a href="${CONTEXT}/home.jsp" title="Главная">Главная</a></li><li>&nbsp;/&nbsp;</li><li><a href="${CONTEXT}/auto" title="Автомобили">Автомобили</a></li><li>&nbsp;/&nbsp;</li><li><span>Легковые автомобили</span></li></ul>
 
-    <div align="justify"><img src="/index_files/nissan_patrol_03.jpg" align="right" border="0" width="40%">Представляем новое поколение известного авто, которое давно уже зарекомендовало себя как надежное и практичное транспортное средство, используемое для многих целей. Теперь у нас можно купить <strong>Nissan Patrol</strong> с ценой по специальным условиям. Стоимость на все комплектации снижена.
+    <div align="justify"><img src="${CONTEXT}/index_files/nissan_patrol_03.jpg" align="right" border="0" width="40%">Представляем новое поколение известного авто, которое давно уже зарекомендовало себя как надежное и практичное транспортное средство, используемое для многих целей. Теперь у нас можно купить <strong>Nissan Patrol</strong> с ценой по специальным условиям. Стоимость на все комплектации снижена.
 
         Пройдя тест драйв или покупая Ниссан Патрол, отзывы свои можно оставить в отдельном меню. Компания и ее представительство будут рады увидеть оценку результатам своей работы.
         <br>

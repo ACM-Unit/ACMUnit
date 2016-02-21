@@ -4,14 +4,12 @@
 <aside style="position: static; width: 200px;">
     <ul class="dropdown">
         <li  class="dropdown-top">
-            <a class="dropdown-top" width="200px" href="/micra.php">NISSAN MICRA</a>
+            <a class="dropdown-top" width="200px" href="${CONTEXT}/micra.jsp">NISSAN MICRA</a>
             <ul class="dropdown-inside">
-                <li><a href="/micraView.php">Обзор модели</a></li>
-                <li><a href="/micraSelectColor.php">Выбор цвета</a></li>
-                <li><a href="#">360 градусов</a></li>
-                <li><a href="#">Галерея</a></li>
-                <li><a href="/pdf/Micra.pdf" download>Скачать прайс</a></li>
-                <li><a href="/pdf/Micra_ua.pdf" download>Скачать брошюру</a></li>
+                <li><a href="${CONTEXT}/micraView">Обзор модели</a></li>
+                <li><a href="${CONTEXT}/micraSelectColor">Выбор цвета</a></li>
+                <li><a href="${CONTEXT}/pdf/Micra.pdf" download>Скачать прайс</a></li>
+                <li><a href="${CONTEXT}/pdf/Micra_ua.pdf" download>Скачать брошюру</a></li>
             </ul>
         </li>
     </ul>
@@ -19,9 +17,9 @@
 
 <article style=" padding-right: 100px; min-width: 600px;">
     <h1>Обзор модели  NISSAN MICRA</h1>
-    <ul class="breadcrumb-navigation"><li><a href="/home.php" title="Главная">Главная</a></li><li>&nbsp;/&nbsp;</li><li><a href="/auto.php" title="Автомобили">Автомобили</a></li><li>&nbsp;/&nbsp;</li><li><span>Легковые автомобили</span></li></ul>
+    <ul class="breadcrumb-navigation"><li><a href="${CONTEXT}/home.jsp" title="Главная">Главная</a></li><li>&nbsp;/&nbsp;</li><li><a href="${CONTEXT}/auto" title="Автомобили">Автомобили</a></li><li>&nbsp;/&nbsp;</li><li><span>Легковые автомобили</span></li></ul>
 
-    <div align="justify"><img src="/index_files/3778e8d9c07c9f9bfec4967b704e94f4.png" align="right" border="0" width="50%"> С <strong>Nissan Micra (Ниссан Микра) </strong>Вы гарантированно получите удовольствие от вождения, так как она стала более подвижная и легкая, чем когда-либо. Новая Micra, которая объединяет в себе модный стиль, компактный дизайн и удивительно просторный салон довезет Вас куда угодно, более того быстро и с комфортом.
+    <div align="justify"><img src="${CONTEXT}/index_files/3778e8d9c07c9f9bfec4967b704e94f4.png" align="right" border="0" width="50%"> С <strong>Nissan Micra (Ниссан Микра) </strong>Вы гарантированно получите удовольствие от вождения, так как она стала более подвижная и легкая, чем когда-либо. Новая Micra, которая объединяет в себе модный стиль, компактный дизайн и удивительно просторный салон довезет Вас куда угодно, более того быстро и с комфортом.
         <br>
 
         <br>

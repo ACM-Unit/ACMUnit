@@ -3,20 +3,18 @@
 <aside>
     <ul class="dropdown">
         <li  class="dropdown-top">
-            <a class="dropdown-top" width="200px" href="${CONTEXT}/murano.php">NISSAN MURANO</a>
+            <a class="dropdown-top" width="200px" href="${CONTEXT}/murano.jsp">NISSAN MURANO</a>
             <ul class="dropdown-inside">
-                <li><a href="${CONTEXT}/muranoView.php">Обзор модели</a></li>
-                <li><a href="${CONTEXT}/muranoSelectColor.php">Выбор цвета</a></li>
-                <li><a href="#">360 градусов</a></li>
-                <li><a href="#">Галерея</a></li>
-                <li><a href="pdf/Murano.pdf" download>Скачать прайс</a></li>
-                <li><a href="pdf/Murano_ua.pdf" download>Скачать брошюру</a></li>
+                <li><a href="${CONTEXT}/muranoView">Обзор модели</a></li>
+                <li><a href="${CONTEXT}/muranoSelectColor">Выбор цвета</a></li>
+                <li><a href="${CONTEXT}/pdf/Murano.pdf" download>Скачать прайс</a></li>
+                <li><a href="${CONTEXT}/pdf/Murano_ua.pdf" download>Скачать брошюру</a></li>
             </ul>
         </li>
     </ul>
 </aside>
 <div class="model-content">
-    <img src="/index_files/murano.jpg" width="100%">
+    <img src="${CONTEXT}/index_files/murano.jpg" width="100%">
     <div class="text">
         <div class="btext">
             <div class="wtext">

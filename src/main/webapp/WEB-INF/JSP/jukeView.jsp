@@ -3,14 +3,12 @@
 <aside style="position: static; width: 200px;">
     <ul class="dropdown">
         <li  class="dropdown-top">
-            <a class="dropdown-top" width="200px" href="${CONTEXT}/juke.php">ОБНОВЛЕННЫЙ NISSAN JUKE</a>
+            <a class="dropdown-top" width="200px" href="${CONTEXT}/juke.jsp">ОБНОВЛЕННЫЙ NISSAN JUKE</a>
             <ul class="dropdown-inside">
-                <li><a href="${CONTEXT}/jukeView.php">Обзор модели</a></li>
-                <li><a href="${CONTEXT}/jukeSelectColor.php">Выбор цвета</a></li>
-                <li><a href="#">360 градусов</a></li>
-                <li><a href="#">Галерея</a></li>
-                <li><a href="pdf/Juke_MC.pdf" download>Скачать прайс</a></li>
-                <li><a href="pdf/Juke.pdf" download>Скачать брошюру</a></li>
+                <li><a href="${CONTEXT}/jukeView">Обзор модели</a></li>
+                <li><a href="${CONTEXT}/jukeSelectColor">Выбор цвета</a></li>
+                <li><a href="${CONTEXT}/pdf/Juke_MC.pdf" download>Скачать прайс</a></li>
+                <li><a href="${CONTEXT}/pdf/Juke.pdf" download>Скачать брошюру</a></li>
             </ul>
         </li>
     </ul>
@@ -18,9 +16,9 @@
 
 <article style=" padding-right: 100px; min-width: 600px;">
     <h1>Обзор модели ОБНОВЛЕННЫЙ NISSAN JUKE</h1>
-    <ul class="breadcrumb-navigation"><li><a href="/home.php" title="Главная">Главная</a></li><li>&nbsp;/&nbsp;</li><li><a href="/auto.php" title="Автомобили">Автомобили</a></li><li>&nbsp;/&nbsp;</li><li><span>Кроссоверы</span></li></ul>
+    <ul class="breadcrumb-navigation"><li><a href="${CONTEXT}/home.jsp" title="Главная">Главная</a></li><li>&nbsp;/&nbsp;</li><li><a href="${CONTEXT}/auto" title="Автомобили">Автомобили</a></li><li>&nbsp;/&nbsp;</li><li><span>Кроссоверы</span></li></ul>
 
-    <div align="justify"><img src="/index_files/005a_juk_my14_pack_person.jpg" align="right" border="0" width="50%">Nissan Juke появившись на украинском рынке, стал основоположником нового рыночного сегмента кроссоверов B-класса.
+    <div align="justify"><img src="${CONTEXT}/index_files/005a_juk_my14_pack_person.jpg" align="right" border="0" width="50%">Nissan Juke появившись на украинском рынке, стал основоположником нового рыночного сегмента кроссоверов B-класса.
         <br>
 
         <br>

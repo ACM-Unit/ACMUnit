@@ -3,15 +3,15 @@
 
     <div class="page-picture">
 
-        <img id="bx_4052760665_40" src="/index_files/0fd72d58a0cfcc229a76f13f0b0a9c80.png" alt="Корпоративным клиентам" title="Корпоративным клиентам" border="0" width="100%">
+        <img id="bx_4052760665_40" src="${CONTEXT}/index_files/0fd72d58a0cfcc229a76f13f0b0a9c80.png" alt="Корпоративным клиентам" title="Корпоративным клиентам" border="0" width="100%">
 
     </div>
 
     <article>
         <h1>Продажа автомобилей Nissan для корпоративных клиентов в Сумах!</h1>
-        <ul class="breadcrumb-navigation"><li><a href="/" title="Главная">Главная</a></li><li>&nbsp;/&nbsp;</li><li><a href="#" title="Услуги">Услуги</a></li><li>&nbsp;/&nbsp;</li><li><span>Корпоративным клиентам</span></li></ul>
+        <ul class="breadcrumb-navigation"><li><a href="${CONTEXT}/home.jsp" title="Главная">Главная</a></li><li>&nbsp;/&nbsp;</li><li><a href="${CONTEXT}/services" title="Услуги">Услуги</a></li><li>&nbsp;/&nbsp;</li><li><span>Корпоративным клиентам</span></li></ul>
         <div id="text">
-            <p align="justify">Запросы на приобретение автомобилей можно направлять по e-mail: <strong>emischenko@nissan-sumy.com.ua</strong>
+            <p align="justify">Запросы на приобретение автомобилей можно направлять по e-mail: <strong>L.mishchenko@nissan-sumy.com.ua</strong>
                 <br>
             </p>
 

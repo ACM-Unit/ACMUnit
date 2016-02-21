@@ -4,14 +4,12 @@
 <aside style="position: static; width: 200px;">
     <ul class="dropdown">
         <li  class="dropdown-top">
-            <a class="dropdown-top" width="200px" href="/sentra.php">NISSAN SENTRA</a>
+            <a class="dropdown-top" width="200px" href="${CONTEXT}/sentra.jsp">NISSAN SENTRA</a>
             <ul class="dropdown-inside">
-                <li><a href="/sentraView.php">Обзор модели</a></li>
-                <li><a href="/sentraSelectColor.php">Выбор цвета</a></li>
-                <li><a href="#">360 градусов</a></li>
-                <li><a href="#">Галерея</a></li>
-                <li><a href="pdf/Sentra.pdf" download>Скачать прайс</a></li>
-                <li><a href="pdf/Sentra_ua.pdf" download>Скачать брошюру</a></li>
+                <li><a href="${CONTEXT}/sentraView">Обзор модели</a></li>
+                <li><a href="${CONTEXT}/sentraSelectColor">Выбор цвета</a></li>
+                <li><a href="${CONTEXT}/pdf/Sentra.pdf" download>Скачать прайс</a></li>
+                <li><a href="${CONTEXT}/pdf/Sentra_ua.pdf" download>Скачать брошюру</a></li>
             </ul>
         </li>
     </ul>

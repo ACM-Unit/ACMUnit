@@ -2,7 +2,7 @@ package constants;
 
 public interface Constants {
     //	public static final String CONNECTING_URL = "jdbc:mysql://127.0.0.1/studentprogress?user=root&password=1515&characterEncoding=UTF-8";
-    String CONNECTING_URL = "jdbc:mysql://localhost:3306/storage?user=root&password=root&characterEncoding=UTF-8";
+    String CONNECTING_URL = "jdbc:mysql://localhost:3306/nissanv1?user=root&password=root&characterEncoding=UTF-8";
     int CONNECTING_POOL_SIZE = 5;
 
     String CONTEXT = "CONTEXT";

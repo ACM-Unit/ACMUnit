@@ -4,23 +4,21 @@
 <aside style="position: static; width: 200px;">
     <ul class="dropdown">
         <li  class="dropdown-top">
-            <a class="dropdown-top" width="200px" href="/murano.php">NISSAN MURANO</a>
+            <a class="dropdown-top" width="200px" href="${CONTEXT}/murano.jsp">NISSAN MURANO</a>
             <ul class="dropdown-inside">
-                <li><a href="/muranoView.php">Обзор модели</a></li>
-                <li><a href="/muranoSelectColor.php">Выбор цвета</a></li>
-                <li><a href="#">360 градусов</a></li>
-                <li><a href="#">Галерея</a></li>
-                <li><a href="pdf/Murano.pdf" download>Скачать прайс</a></li>
-                <li><a href="pdf/Murano_ua.pdf" download>Скачать брошюру</a></li>
+                <li><a href="${CONTEXT}/muranoView">Обзор модели</a></li>
+                <li><a href="${CONTEXT}/muranoSelectColor">Выбор цвета</a></li>
+                <li><a href="${CONTEXT}/pdf/Murano.pdf" download>Скачать прайс</a></li>
+                <li><a href="${CONTEXT}/pdf/Murano_ua.pdf" download>Скачать брошюру</a></li>
             </ul>
         </li>
     </ul>
 </aside>
 <article style=" padding-right: 100px; min-width: 600px;">
     <h1>Обзор модели Nissan Murano</h1>
-    <ul class="breadcrumb-navigation"><li><a href="/home.php" title="Главная">Главная</a></li><li>&nbsp;/&nbsp;</li><li><a href="/auto.php" title="Автомобили">Автомобили</a></li><li>&nbsp;/&nbsp;</li><li><span>Кроссоверы</span></li></ul>
+    <ul class="breadcrumb-navigation"><li><a href="${CONTEXT}/home.jsp" title="Главная">Главная</a></li><li>&nbsp;/&nbsp;</li><li><a href="${CONTEXT}/auto" title="Автомобили">Автомобили</a></li><li>&nbsp;/&nbsp;</li><li><span>Кроссоверы</span></li></ul>
 
-    <div align="justify"><img src="/index_files/nissan_murano_white_450.jpg" align="right" border="0" width="50%"><strong>Nissan Murano: почувствуйте себя королем дорог!</strong>
+    <div align="justify"><img src="${CONTEXT}/index_files/nissan_murano_white_450.jpg" align="right" border="0" width="50%"><strong>Nissan Murano: почувствуйте себя королем дорог!</strong>
         <br>
 
         <br>

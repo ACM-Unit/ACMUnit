@@ -1,5 +1,6 @@
 package controllers;
 
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
         import javax.servlet.http.HttpServletResponse;
         import java.util.HashMap;
@@ -8,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Created by Admin on 13.12.2015.
  */
+@WebServlet(name = "MicraController", urlPatterns = {"/micra", "admin/micra", "user/micra" , "/micra.jsp", "admin/micra.jsp", "user/micra.jsp" })
 public class MicraController extends AbstractWebtasksServletHandler {
     private final Map<Integer, String> mappings = new HashMap<Integer, String>();
     public MicraController() {

@@ -3,20 +3,18 @@
 <aside>
     <ul class="dropdown">
         <li  class="dropdown-top">
-            <a class="dropdown-top" width="200px" href="${CONTEXT}/xTrail.php">NISSAN X-TRAIL </a>
+            <a class="dropdown-top" width="200px" href="${CONTEXT}/xTrail.jsp">NISSAN X-TRAIL </a>
             <ul class="dropdown-inside">
-                <li><a href="${CONTEXT}/xTrailView.php">Обзор модели</a></li>
-                <li><a href="${CONTEXT}/xTrailSelectColor.php">Выбор цвета</a></li>
-                <li><a href="#">360 градусов</a></li>
-                <li><a href="#">Галерея</a></li>
-                <li><a href="/pdf/Xtrail_New.pdf" download>Скачать прайс</a></li>
-                <li><a href="/pdf/X-Trail-New_ua.pdf" download>Скачать брошюру</a></li>
+                <li><a href="${CONTEXT}/xTrailView">Обзор модели</a></li>
+                <li><a href="${CONTEXT}/xTrailSelectColor">Выбор цвета</a></li>
+                <li><a href="${CONTEXT}/pdf/Xtrail_New.pdf" download>Скачать прайс</a></li>
+                <li><a href="${CONTEXT}/pdf/X-Trail-New_ua.pdf" download>Скачать брошюру</a></li>
             </ul>
         </li>
     </ul>
 </aside>
 <div class="model-content">
-    <img src="/index_files/870478a_f77_15tdieulhd_p32rb018.jpg" width="100%">
+    <img src="${CONTEXT}/index_files/870478a_f77_15tdieulhd_p32rb018.jpg" width="100%">
     <div class="text">
         <div class="btext">
             <div class="wtext">

@@ -4,14 +4,12 @@
 <aside style="position: static; width: 200px;">
     <ul class="dropdown">
         <li  class="dropdown-top">
-            <a class="dropdown-top" width="200px" href="/patrol.php">NISSAN MICRA</a>
+            <a class="dropdown-top" width="200px" href="${CONTEXT}/patrol.jsp">NISSAN MICRA</a>
             <ul class="dropdown-inside">
-                <li><a href="/patrolView.php">Обзор модели</a></li>
-                <li><a href="/patrolSelectColor.php">Выбор цвета</a></li>
-                <li><a href="#">360 градусов</a></li>
-                <li><a href="#">Галерея</a></li>
-                <li><a href="pdf/Patrol.pdf" download>Скачать прайс</a></li>
-                <li><a href="pdf/Patrol_ua.pdf" download>Скачать брошюру</a></li>
+                <li><a href="${CONTEXT}/patrolView">Обзор модели</a></li>
+                <li><a href="${CONTEXT}/patrolSelectColor">Выбор цвета</a></li>
+                <li><a href="${CONTEXT}/pdf/Patrol.pdf" download>Скачать прайс</a></li>
+                <li><a href="${CONTEXT}/pdf/Patrol_ua.pdf" download>Скачать брошюру</a></li>
             </ul>
         </li>
     </ul>

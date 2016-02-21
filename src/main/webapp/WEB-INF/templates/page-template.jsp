@@ -37,7 +37,7 @@
     <script type="text/javascript" src="${CONTEXT}/jquery.glide.js"></script>
     <script>
         $('.slider').glide({
-            autoplay: 5000,
+            autoplay: 10000,
             arrows: 'body',
             nav: 'body'
         });
@@ -82,7 +82,7 @@
 
 <div class="container">
     <header>
-        <a href="${CONTEXT}/home.php" class="logo"></a>
+        <a href="${CONTEXT}/home.jsp" class="logo"></a>
 
         <div class="dealer-name">
             <div>Официальный дилер Nissan  </div>
@@ -95,47 +95,47 @@
         <div class="top_menu">
             <ul class="main-navigation">
                 <li>
-                    <a href="${CONTEXT}/auto.php" class="">Автомобили</a>
+                    <a href="${CONTEXT}/auto" class="">Автомобили</a>
                     <!-- start car-list -->
                     <ul class="car-list">
                         <li>
-                            <a href="${CONTEXT}/micra.php">
+                            <a href="${CONTEXT}/micra.jsp">
                                 <img src="${CONTEXT}/index_files/c8bed5e5bf863c43bfa8a67fd612b9a4.png" alt="Micra" height="40" width="100">
                                 <p style="margin:0;padding:0;">Micra</p> <span>от 293 430 грн.</span>
                             </a>
                         </li>
                         <li>
-                            <a href="${CONTEXT}/sentra.php">
+                            <a href="${CONTEXT}/sentra.jsp">
                                 <img src="/index_files/sentra-prof.jpg" alt="sentra" height="38" width="100">
                                 <p style="margin:0;padding:0;">sentra</p> <span>от 393 560 грн.</span>
                             </a>
                         </li>
                         <li>
-                            <a href="${CONTEXT}/juke.php">
+                            <a href="${CONTEXT}/juke.jsp">
                                 <img src="/index_files/new-juke3.png" alt="ОБНОВЛЕННЫЙ JUKE" height="40" width="100">
                                 <p style="margin:0;padding:0;">ОБНОВЛЕННЫЙ JUKE</p> <span>от 428 580 грн.</span>
                             </a>
                         </li>
                         <li>
-                            <a href="${CONTEXT}/qashqai.php">
+                            <a href="${CONTEXT}/qashqai.jsp">
                                 <img src="/index_files/3902e79af1e3bc28153f0382a891f22d.png" alt="QASHQAI" height="40" width="100">
                                 <p style="margin:0;padding:0;">QASHQAI</p> <span>от 545 700 грн.</span>
                             </a>
                         </li>
                         <li>
-                            <a href="${CONTEXT}/murano.php">
+                            <a href="${CONTEXT}/murano.jsp">
                                 <img src="/index_files/89a8acf0d6584e86dc51abc18fd1b871.png" alt="MURANO" height="40" width="100">
                                 <p style="margin:0;padding:0;">MURANO</p> <span>от 995 420 грн.</span>
                             </a>
                         </li>
                         <li>
-                            <a href="${CONTEXT}/patrol.php">
+                            <a href="${CONTEXT}/patrol.jsp">
                                 <img src="/index_files/Patrol-119x62.png" alt="PATROL " height="40" width="100">
                                 <p style="margin:0;padding:0;">PATROL </p> <span>от 2 249 180 грн.</span>
                             </a>
                         </li>
                         <li>
-                            <a href="${CONTEXT}/xTrail.php">
+                            <a href="${CONTEXT}/xTrail.jsp">
                                 <img src="/index_files/l.jpg" alt="X-TRAIL" height="43" width="100">
                                 <p style="margin:0;padding:0;">X-TRAIL</p> <span>от 653 060 грн.</span>
                             </a>
@@ -144,24 +144,23 @@
                     <!-- end car-list -->
                 </li>
                 <li>
-                    <a href="${CONTEXT}/service.php" class="">Сервис</a>
+                    <a href="${CONTEXT}/service" class="">Сервис</a>
                     <ul class="second-list">
-                        <li><a href="${CONTEXT}/service.php">Сервисное обслуживание</a></li>
-                        <li><a href="${CONTEXT}/guarantee.php">Условия гарантии</a></li>
-                        <li><a href="${CONTEXT}/help.php">Помощь на дорогах</a></li>
-                        <li><a href="${CONTEXT}/parts.php">Запасные части</a></li>
-                        <li><a href="${CONTEXT}/afterSales.php">Послепродажное обслуживание</a></li>
+                        <li><a href="${CONTEXT}/service">Сервисное обслуживание</a></li>
+                        <li><a href="${CONTEXT}/guarantee">Условия гарантии</a></li>
+                        <li><a href="${CONTEXT}/help">Помощь на дорогах</a></li>
+                        <li><a href="${CONTEXT}/parts">Запасные части</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="${CONTEXT}/services.php" class="">Услуги</a>
+                    <a href="${CONTEXT}/services" class="">Услуги</a>
 
                 </li>
                 <li>
-                    <a href="${CONTEXT}/ourAutoCenter.php" class="">Наш автоцентр</a>
+                    <a href="${CONTEXT}/ourAutoCenter" class="">Наш автоцентр</a>
                     <ul class="second-list">
-                        <li><a href="${CONTEXT}/ourAutoCenter.php">О компании</a></li>
-                        <li><a href="${CONTEXT}/contacts.php">Контакты</a></li>
+                        <li><a href="${CONTEXT}/ourAutoCenter">О компании</a></li>
+                        <li><a href="${CONTEXT}/contacts">Контакты</a></li>
                     </ul>
                 </li>
                 <li>
@@ -184,13 +183,13 @@
 
 <footer>
     <div class="contacts">
-        <h4><a href="${CONTEXT}/contacts.php">Контактная информация</a></h4>
+        <h4><a href="${CONTEXT}/contacts">Контактная информация</a></h4>
         <div class="inline_">просп. Курский, 22, г. Сумы, Украина ,</div>
     </div>
     <div class="row">
         <div class="column column-5">
             <div class="panel">
-                <h4 class="cars"><a href="${CONTEXT}/auto.php">автомобили</a></h4>
+                <h4 class="cars"><a href="${CONTEXT}/auto">автомобили</a></h4>
                 <ul>
                     <li><a href="#">Легковые автомобили</a></li>
                     <li><a href="#">Кроссоверы</a></li>
@@ -201,28 +200,28 @@
         </div>
         <div class="column column-5">
             <div class="panel">
-                <h4 class="service"><a href="${CONTEXT}/service.php">СЕРВИС</a></h4>
+                <h4 class="service"><a href="${CONTEXT}/service">СЕРВИС</a></h4>
                 <ul>
-                    <li><a href="${CONTEXT}/service.php">Сервисное обслуживание</a></li>
-                    <li><a href="${CONTEXT}/guarantee.php">Условия гарантии</a></li>
-                    <li><a href="${CONTEXT}/help.php">Помощь на дорогах</a></li>
-                    <li><a href="${CONTEXT}/parts.php">Запасные части</a></li>
-                    <li><a href="${CONTEXT}/aftersales.php">Послепродажное обслуживание</a></li>
+                    <li><a href="${CONTEXT}/service">Сервисное обслуживание</a></li>
+                    <li><a href="${CONTEXT}/guarantee">Условия гарантии</a></li>
+                    <li><a href="${CONTEXT}/help">Помощь на дорогах</a></li>
+                    <li><a href="${CONTEXT}/parts">Запасные части</a></li>
+                    <li><a href="${CONTEXT}/aftersales">Послепродажное обслуживание</a></li>
                 </ul>				</div>
         </div>
         <div class="column column-5">
             <div class="panel">
-                <h4 class="services"><a href="${CONTEXT}/services.php">УСЛУГИ</a></h4>
+                <h4 class="services"><a href="${CONTEXT}/services">УСЛУГИ</a></h4>
 
             </div>
         </div>
         <div class="column column-6">
             <div class="panel">
-                <h4 class="avtocentr"><a href="${CONTEXT}/OurAutoCenter.php">НАШ АВТОЦЕНТР</a></h4>
+                <h4 class="avtocentr"><a href="${CONTEXT}/OurAutoCenter">НАШ АВТОЦЕНТР</a></h4>
                 <ul>
-                    <li><a href="${CONTEXT}/ourAutoCenter.php">О компании</a></li>
-                    <li><a href="${CONTEXT}/loyalty.php">Программа лояльности</a></li>
-                    <li><a href="${CONTEXT}/contacts.php">Контакты</a></li>
+                    <li><a href="${CONTEXT}/ourAutoCenter">О компании</a></li>
+                    <li><a href="${CONTEXT}/loyalty">Программа лояльности</a></li>
+                    <li><a href="${CONTEXT}/contacts">Контакты</a></li>
                 </ul>				</div>
         </div>
         <div class="column column-7">

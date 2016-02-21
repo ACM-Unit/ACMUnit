@@ -4,23 +4,21 @@
 <aside style="position: static; width: 200px;">
     <ul class="dropdown">
         <li  class="dropdown-top">
-            <a class="dropdown-top" width="200px" href="/sentra.php">NISSAN SENTRA</a>
+            <a class="dropdown-top" width="200px" href="${CONTEXT}/sentra.jsp">NISSAN SENTRA</a>
             <ul class="dropdown-inside">
-                <li><a href="/sentraView.php">Обзор модели</a></li>
-                <li><a href="/sentraSelectColor.php">Выбор цвета</a></li>
-                <li><a href="#">360 градусов</a></li>
-                <li><a href="#">Галерея</a></li>
-                <li><a href="pdf/Sentra.pdf" download>Скачать прайс</a></li>
-                <li><a href="pdf/Sentra_ua.pdf" download>Скачать брошюру</a></li>
+                <li><a href="${CONTEXT}/sentraView">Обзор модели</a></li>
+                <li><a href="${CONTEXT}/sentraSelectColor">Выбор цвета</a></li>
+                <li><a href="${CONTEXT}/pdf/Sentra.pdf" download>Скачать прайс</a></li>
+                <li><a href="${CONTEXT}/pdf/Sentra_ua.pdf" download>Скачать брошюру</a></li>
             </ul>
         </li>
     </ul>
 </aside>
 <article style=" padding-right: 100px; min-width: 600px;">
     <h1>Обзор модели NISSAN SENTRA</h1>
-    <ul class="breadcrumb-navigation"><li><a href="/home.php" title="Главная">Главная</a></li><li>&nbsp;/&nbsp;</li><li><a href="/auto.php" title="Автомобили">Автомобили</a></li><li>&nbsp;/&nbsp;</li><li><span>Легковые автомобили</span></li></ul>
+    <ul class="breadcrumb-navigation"><li><a href="${CONTEXT}/home.jsp" title="Главная">Главная</a></li><li>&nbsp;/&nbsp;</li><li><a href="${CONTEXT}/auto" title="Автомобили">Автомобили</a></li><li>&nbsp;/&nbsp;</li><li><span>Легковые автомобили</span></li></ul>
 
-    <div align="justify"><img src="/index_files/sentra-opisanie.jpg" align="right" border="0" width="50%"> Стремитесь к новым достижениям с новым NISSAN SENTRA: солидный, современный, надежный и благородный - он открывает самый комфортный  путь к наслаждению жизнью. Расслабьтесь в приятной атмосфере просторного седана в удобных креслах, как у себя дома. Оказавшись внутри, Вы не захотите ничего другого.
+    <div align="justify"><img src="${CONTEXT}/index_files/sentra-opisanie.jpg" align="right" border="0" width="50%"> Стремитесь к новым достижениям с новым NISSAN SENTRA: солидный, современный, надежный и благородный - он открывает самый комфортный  путь к наслаждению жизнью. Расслабьтесь в приятной атмосфере просторного седана в удобных креслах, как у себя дома. Оказавшись внутри, Вы не захотите ничего другого.
         <br>
 
         <br>

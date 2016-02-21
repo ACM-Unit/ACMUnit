@@ -4,12 +4,10 @@
 <aside style="position: static; width: 200px;">
     <ul class="dropdown">
         <li  class="dropdown-top">
-            <a class="dropdown-top" width="200px" href="/xTrail.php">NISSAN X-TRAIL</a>
+            <a class="dropdown-top" width="200px" href="${CONTEXT}/xTrail.jsp">NISSAN X-TRAIL</a>
             <ul class="dropdown-inside">
-                <li><a href="/xTrailView.php">Обзор модели</a></li>
-                <li><a href="/xTrailSelectColor.php">Выбор цвета</a></li>
-                <li><a href="#">360 градусов</a></li>
-                <li><a href="#">Галерея</a></li>
+                <li><a href="${CONTEXT}/xTrailView">Обзор модели</a></li>
+                <li><a href="${CONTEXT}/xTrailSelectColor">Выбор цвета</a></li>
                 <li><a href="/pdf/Xtrail_New.pdf" download>Скачать прайс</a></li>
                 <li><a href="/pdf/X-Trail-New_ua.pdf" download>Скачать брошюру</a></li>
             </ul>
@@ -18,9 +16,9 @@
 </aside>
 <article style=" padding-right: 100px; min-width: 600px;">
     <h1>Обзор модели NISSAN X-TRAIL</h1>
-    <ul class="breadcrumb-navigation"><li><a href="/home.php" title="Главная">Главная</a></li><li>&nbsp;/&nbsp;</li><li><a href="/auto.php" title="Автомобили">Автомобили</a></li><li>&nbsp;/&nbsp;</li><li><span>Легковые автомобили</span></li></ul>
+    <ul class="breadcrumb-navigation"><li><a href="${CONTEXT}/home.jsp" title="Главная">Главная</a></li><li>&nbsp;/&nbsp;</li><li><a href="${CONTEXT}/auto" title="Автомобили">Автомобили</a></li><li>&nbsp;/&nbsp;</li><li><span>Легковые автомобили</span></li></ul>
 
-    <div align="justify"><img src="/index_files/new-xtrail-2014.jpg" align="right" border="0" width="40%">Независимо от ваших планов, будь то побег из города на выходные или повседневные поездки, новый <strong>Nissan X-TRAIL (Ниссан Икс-Трейл)</strong>, благодаря своему энергичному дизайну, просторному салону и инновационным техническим возможностям, готов к любым приключениям.
+    <div align="justify"><img src="${CONTEXT}/index_files/new-xtrail-2014.jpg" align="right" border="0" width="40%">Независимо от ваших планов, будь то побег из города на выходные или повседневные поездки, новый <strong>Nissan X-TRAIL (Ниссан Икс-Трейл)</strong>, благодаря своему энергичному дизайну, просторному салону и инновационным техническим возможностям, готов к любым приключениям.
         <br>
 
         <br>
@@ -33,7 +31,7 @@
         <strong>Nissan X-TRAIL</strong> сочетает в себе энергичный дизайн и аэродинамические характеристики кроссоверов Nissan с надежностью внедорожников, что делает его динамичным и стильным. Благодаря четким и элегантным линиям и наличию панорамного люка с электроприводом, который оценят ваши пассажиры, дизайн этого автомобиля излучает решимость.
         Задние фары, напоминающие бумеранг, светодиодные передние фары, а также 18-дюймовые легкосплавные диски формируют фирменный стиль нового <strong>Nissan X-TRAIL.</strong>
         <br>
-        <img src="/index_files/xtrail_nissanconnect_800x500.jpg" align="left" border="0" width="40%"  style="padding: 5px">
+        <img src="${CONTEXT}/index_files/xtrail_nissanconnect_800x500.jpg" align="left" border="0" width="40%"  style="padding: 5px">
         <br>
         Оставайтесь на связи с окружающим миром! Новая система NissanConnect сочетает в себе функции воспроизведения аудио, службы навигации и громкой связи. Благодаря 7-дюймовому антибликовому сенсорному экрану она очень проста в использовании.
         <br>
@@ -46,7 +44,7 @@
         Кроме того, многочисленные интерактивные службы, например Google Points of Interest©, позволяют получать информацию о пробках, возможностях изменения маршрута, свободных местах на парковке, ценах на топливо и даже прогноз погоды, за счет чего новый X-TRAIL располагает всем необходимым для планирования маршрута.
 
         <br>
-        <img src="/index_files/xtrail_tftscreen_800x500.jpg" align="right" border="0" width="40%"  style="padding: 5px">
+        <img src="${CONTEXT}/index_files/xtrail_tftscreen_800x500.jpg" align="right" border="0" width="40%"  style="padding: 5px">
         <br>
         Удобные средства обеспечения безопасности, например система предупреждений о поворотах, превышении скорости, заторах и смене полосы движения, сделают ваше пребывание за рулем максимально комфортным.
         Благодаря системе безопасности Nissan Safety Shield новый Nissan X-TRAIL поможет вам избежать лобового столкновения, а также предупредит о наличии объектов в «мертвой зоне», съезде с полосы и других опасностях.
@@ -60,7 +58,7 @@
         <br>
         Такие условия, как парковка или старт на подъеме не вызовут ни малейших затруднений. Благодаря системе помощи при парковке Nissan Park Assist ваш новый <strong>Nissan X-TRAIL</strong> становится маневренным и без колебаний вписывается в пространство парковочного места, с каждым разом придавая вам все больше уверенности. При этом система следит за наличием достаточного пространства вокруг автомобиля, чтобы вам не пришлось проявлять чудеса маневренности при выходе из него. Система помощи при подъеме также обеспечивает безопасность во время вождения, поэтому вы можете сосредоточиться на своих ощущениях.
         <br>
-        <img src="/index_files/xtrail_7seats_800x500.jpg" align="left" border="0" width="40%" style="padding: 5px">
+        <img src="${CONTEXT}/index_files/xtrail_7seats_800x500.jpg" align="left" border="0" width="40%" style="padding: 5px">
         <br>
         Многофункциональность нового <strong>Nissan X-TRAIL</strong> не знает границ. Свободного места хватит всегда: можно разложить два дополнительных задних пассажирских сиденья или распределить багажник на отдельные отсеки для одновременной перевозки влажных и сухих грузов.
         <br>

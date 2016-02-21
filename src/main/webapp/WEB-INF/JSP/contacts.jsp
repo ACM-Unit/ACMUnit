@@ -3,7 +3,7 @@
 
 <article style="width: 70%; margin: auto;">
     <h1>Контакты дилерского центра и сервисного центра Nissan в городе Сумы!</h1>
-    <ul class="breadcrumb-navigation"><li><a href="/home.php" title="Главная">Главная</a></li><li>&nbsp;/&nbsp;</li><li><a href="/ourAutoCenter.php" title="Наш автоцентр">Наш автоцентр</a></li><li>&nbsp;/&nbsp;</li><li><span>Контакты</span></li></ul>
+    <ul class="breadcrumb-navigation"><li><a href="${CONTEXT}/home.jsp" title="Главная">Главная</a></li><li>&nbsp;/&nbsp;</li><li><a href="${CONTEXT}/ourAutoCenter" title="Наш автоцентр">Наш автоцентр</a></li><li>&nbsp;/&nbsp;</li><li><span>Контакты</span></li></ul>
     <div id="text" class="content">
         <div style="float: left; padding-left: 5%; " class="contact">
             <h3>ПЕККФ “АВТО ПЛЮС”</h3>
@@ -37,7 +37,7 @@
 
             <p>тел.: (0542) 679-259
                 <br>
-                e-mail: <b>emischenko@nissan-sumy.com.ua</b></p>
+                e-mail: <b>L.mishchenko@nissan-sumy.com.ua</b></p>
 
             <ul>
                 <li>Пн - Пт с <strong>9:00</strong> до <b>18:00</b></li>

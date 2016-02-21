@@ -4,14 +4,12 @@
 <aside style="position: static; width: 200px;">
     <ul class="dropdown">
         <li  class="dropdown-top">
-            <a class="dropdown-top" width="200px" href="/xTrail.php">NISSAN X-TRAIL</a>
+            <a class="dropdown-top" width="200px" href="${CONTEXT}/xTrail.jsp">NISSAN X-TRAIL</a>
             <ul class="dropdown-inside">
-                <li><a href="/xTrailView.php">Обзор модели</a></li>
-                <li><a href="/xTrailSelectColor.php">Выбор цвета</a></li>
-                <li><a href="#">360 градусов</a></li>
-                <li><a href="#">Галерея</a></li>
-                <li><a href="/pdf/Xtrail_New.pdf" download>Скачать прайс</a></li>
-                <li><a href="/pdf/X-Trail-New_ua.pdf" download>Скачать брошюру</a></li>
+                <li><a href="${CONTEXT}/xTrailView">Обзор модели</a></li>
+                <li><a href="${CONTEXT}/xTrailSelectColor">Выбор цвета</a></li>
+                <li><a href="${CONTEXT}/pdf/Xtrail_New.pdf" download>Скачать прайс</a></li>
+                <li><a href="${CONTEXT}/pdf/X-Trail-New_ua.pdf" download>Скачать брошюру</a></li>
             </ul>
         </li>
     </ul>
