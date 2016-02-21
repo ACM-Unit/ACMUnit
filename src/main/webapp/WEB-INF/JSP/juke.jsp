@@ -23,6 +23,6 @@
                         <div align="justify"><font color="#FFFFFF"><span style="font-size: 10pt; font-family: Verdana,sans-serif;"></span>Обновление <b>Nissan Juke</b> коснулось внешнего вида автомобиля: в дизайне передней и задней частей усилены премиальные и спортивные черты, также теперь предлагается программа заводской персонализации автомобиля. </font></div>
                     </div>
                 </div>
-                <span class="price">от 428 580 грн.</span>
+                <span class="price">от ${juke} грн.</span>
             </div>
         </div>

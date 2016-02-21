@@ -15,37 +15,37 @@
             <li>
                 <a href="${CONTEXT}/sentra.jsp">
                     <img src="${CONTEXT}/index_files/sentra-spisok.jpg" alt="NISSAN SENTRA" height="98" width="180">
-                    <br><br>NISSAN SENTRA <span>от 393 560 грн.</span>
+                    <br><br>NISSAN SENTRA <span>от ${micra} грн.</span>
                 </a>
             </li>
             <li>
                 <a href="${CONTEXT}/juke.jsp">
                     <img src="${CONTEXT}/index_files/new-juke-4.png" alt="ОБНОВЛЕННЫЙ NISSAN JUKE" height="99" width="180">
-                    <br><br>ОБНОВЛЕННЫЙ NISSAN JUKE <span>от 428 580 грн.</span>
+                    <br><br>ОБНОВЛЕННЫЙ NISSAN JUKE <span>от ${sentra} грн.</span>
                 </a>
             </li>
             <li>
                 <a href="${CONTEXT}/qashqai.jsp">
                     <img src="${CONTEXT}/index_files/bd837d25d74f40a3a261af1993263ea2.jpg" alt="NISSAN QASHQAI" height="100" width="165">
-                    <br><br>NISSAN QASHQAI <span>от 545 700 грн.</span>
+                    <br><br>NISSAN QASHQAI <span>от ${qashqai} грн.</span>
                 </a>
             </li>
             <li>
                 <a href="${CONTEXT}/murano.jsp">
                     <img src="${CONTEXT}/index_files/cd1fc188db91a3d145e7a584662f5b56.png" alt="NISSAN MURANO" height="92" width="180">
-                    <br><br>NISSAN MURANO <span>от 995 420 грн.</span>
+                    <br><br>NISSAN MURANO <span>от ${murano} грн.</span>
                 </a>
             </li>
             <li>
                 <a href="${CONTEXT}/patrol.jsp">
                     <img src="${CONTEXT}/index_files/patrol_big.jpg" alt="NISSAN Patrol " height="100" width="154">
-                    <br><br>NISSAN PATROL  <span>от 2 249 180 грн.</span>
+                    <br><br>NISSAN PATROL  <span>от ${patrol} грн.</span>
                 </a>
             </li>
             <li>
                 <a href="${CONTEXT}/xTrail.jsp">
                     <img src="${CONTEXT}/index_files/l2.jpg" alt="NISSAN X-TRAIL" height="92" width="180">
-                    <br><br>NISSAN X-TRAIL <span>от 653 060 грн.</span>
+                    <br><br>NISSAN X-TRAIL <span>от ${xtrail} грн.</span>
                 </a>
             </li>
         </ul>

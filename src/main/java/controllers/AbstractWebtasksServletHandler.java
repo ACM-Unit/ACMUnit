@@ -1,6 +1,8 @@
 package controllers;
 
 import constants.Constants;
+import database.DataService;
+import models.Price;
 import org.apache.log4j.Logger;
 
 import javax.servlet.ServletConfig;
@@ -11,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * @author acmunit
@@ -121,11 +124,19 @@ public abstract class AbstractWebtasksServletHandler extends HttpServlet
 
 	protected final void gotoToJSP(String page, HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
+		DataService dataservice = new DataService();
+		List<Price> prices= dataservice.getAllPrices();
+		request.setAttribute("micra", prices.get(0).getPrice() );
+		request.setAttribute("sentra", prices.get(1).getPrice() );
+		request.setAttribute("juke", prices.get(2).getPrice() );
+		request.setAttribute("qashqai", prices.get(3).getPrice() );
+		request.setAttribute("murano", prices.get(4).getPrice() );
+		request.setAttribute("patrol", prices.get(5).getPrice() );
+		request.setAttribute("xtrail", prices.get(6).getPrice() );
 		request.setAttribute("currentPage", "../JSP/" + page);
 		request.getRequestDispatcher("/WEB-INF/templates/page-template.jsp")
 				.forward(request, response);
 	}
-
 	protected final void forwardRequest(String url, HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher(url).forward(request, response);

@@ -101,43 +101,43 @@
                         <li>
                             <a href="${CONTEXT}/micra.jsp">
                                 <img src="${CONTEXT}/index_files/c8bed5e5bf863c43bfa8a67fd612b9a4.png" alt="Micra" height="40" width="100">
-                                <p style="margin:0;padding:0;">Micra</p> <span>от 293 430 грн.</span>
+                                <p style="margin:0;padding:0;">Micra</p> <span>от ${micra} грн.</span>
                             </a>
                         </li>
                         <li>
                             <a href="${CONTEXT}/sentra.jsp">
                                 <img src="/index_files/sentra-prof.jpg" alt="sentra" height="38" width="100">
-                                <p style="margin:0;padding:0;">sentra</p> <span>от 393 560 грн.</span>
+                                <p style="margin:0;padding:0;">sentra</p> <span>от ${sentra} грн.</span>
                             </a>
                         </li>
                         <li>
                             <a href="${CONTEXT}/juke.jsp">
                                 <img src="/index_files/new-juke3.png" alt="ОБНОВЛЕННЫЙ JUKE" height="40" width="100">
-                                <p style="margin:0;padding:0;">ОБНОВЛЕННЫЙ JUKE</p> <span>от 428 580 грн.</span>
+                                <p style="margin:0;padding:0;">ОБНОВЛЕННЫЙ JUKE</p> <span>от ${juke} грн.</span>
                             </a>
                         </li>
                         <li>
                             <a href="${CONTEXT}/qashqai.jsp">
                                 <img src="/index_files/3902e79af1e3bc28153f0382a891f22d.png" alt="QASHQAI" height="40" width="100">
-                                <p style="margin:0;padding:0;">QASHQAI</p> <span>от 545 700 грн.</span>
+                                <p style="margin:0;padding:0;">QASHQAI</p> <span>от ${qashqai} грн.</span>
                             </a>
                         </li>
                         <li>
                             <a href="${CONTEXT}/murano.jsp">
                                 <img src="/index_files/89a8acf0d6584e86dc51abc18fd1b871.png" alt="MURANO" height="40" width="100">
-                                <p style="margin:0;padding:0;">MURANO</p> <span>от 995 420 грн.</span>
+                                <p style="margin:0;padding:0;">MURANO</p> <span>от ${murano} грн.</span>
                             </a>
                         </li>
                         <li>
                             <a href="${CONTEXT}/patrol.jsp">
                                 <img src="/index_files/Patrol-119x62.png" alt="PATROL " height="40" width="100">
-                                <p style="margin:0;padding:0;">PATROL </p> <span>от 2 249 180 грн.</span>
+                                <p style="margin:0;padding:0;">PATROL </p> <span>от ${patrol} грн.</span>
                             </a>
                         </li>
                         <li>
                             <a href="${CONTEXT}/xTrail.jsp">
                                 <img src="/index_files/l.jpg" alt="X-TRAIL" height="43" width="100">
-                                <p style="margin:0;padding:0;">X-TRAIL</p> <span>от 653 060 грн.</span>
+                                <p style="margin:0;padding:0;">X-TRAIL</p> <span>от ${xtrail} грн.</span>
                             </a>
                         </li>
                     </ul>

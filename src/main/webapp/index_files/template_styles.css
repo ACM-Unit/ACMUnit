@@ -83,8 +83,12 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 	background: url(/index_files/arr.png) no-repeat 0px 2px;
 }
 .promo li {
+	float: left;
+	width: 33.3%;
 	text-align: left;
+	padding-left: 94px;
 	font-size: 12px;
+	display: inline-block;
 }
 .promo {
 	list-style: none;

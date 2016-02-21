@@ -24,6 +24,6 @@
                 <p class="title1" data-anchor-id="СКОРОВУКРАИНЕspan"><span itemprop="description"><font color="#FFFFFF">Вдохновляя город элегантностью. </font> </span></p>
             </div>
         </div>
-        <span class="price">от 995 420 грн.</span>
+        <span class="price">от ${murano} грн.</span>
     </div>
 </div>

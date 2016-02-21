@@ -1,13 +1,11 @@
 package controllers;
 
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.Map;
 
 
-@WebServlet(name = "HelpController", urlPatterns = {"/help", "admin/help", "user/help" })
 public class HelpController extends AbstractWebtasksServletHandler {
     private final Map<Integer, String> mappings = new HashMap<Integer, String>();
     public HelpController() {

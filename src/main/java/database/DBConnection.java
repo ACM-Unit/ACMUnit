@@ -2,6 +2,7 @@ package database;
 
 import constants.Constants;
 import models.Account;
+import models.Price;
 import models.Role;
 import org.apache.log4j.Logger;
 
@@ -18,6 +19,7 @@ public class DBConnection {
     private Connection conn = null;
     private ResultSet rs = null;
     private static PreparedStatement loadAllPrices;
+    private static PreparedStatement loadPrice;
     private static PreparedStatement loadAllNews;
     private static PreparedStatement insertPrice;
     private static PreparedStatement updatePrice;
@@ -44,13 +46,12 @@ public class DBConnection {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
-
     private void loadPreparedStatements() {
         try {
 
             loadAllPrices = conn.prepareStatement("SELECT * from NISSANV1.PRICES");
+            loadPrice=conn.prepareStatement("SELECT * from NISSANV1.PRICES WHERE  MODEL=?");
             loadAllNews = conn.prepareStatement("SELECT * from NISSANV1.NEWS");
             insertPrice = conn.prepareStatement("INSERT INTO NISSANV1.PRICES(MODEL, PRICE) VALUES(?, ?)");
             updatePrice = conn.prepareStatement("UPDATE NISSANV1.PRICES SET PRICES.PRICE = ? WHERE PRICES.MODEL= ?");
@@ -69,7 +70,9 @@ public class DBConnection {
         try {
             loadAllRoles.close();
             loadAllPrices.close();
+            loadPrice.close();
             insertPrice.close();
+            loadAllNews.close();
             updatePrice.close();
             loadAllLogins.close();
             loadAccountByLogin.close();
@@ -79,6 +82,42 @@ public class DBConnection {
             e.printStackTrace();
         }
     }
+    /*-----------------------prices-------------------------*/
+    public List<Price> getAllPrices() {
+        rs = null;
+        List<Price> result = new LinkedList<Price>();
+        try {
+            rs = loadAllPrices.executeQuery();
+            while (rs.next()) {
+                Price r = new Price();
+                r.setId(rs.getInt("id"));
+                r.setPrice(rs.getString("price"));
+                r.setModel(rs.getString("model"));
+                result.add(r);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+    public Price getPrice(String model) {
+        rs = null;
+        Price result = new Price();
+        try {
+            loadPrice.setNString(1, model);
+            rs = loadPrice.executeQuery();
+            while (rs.next()) {
+                result.setId(rs.getInt("id"));
+                result.setPrice(rs.getString("price"));
+                result.setModel(rs.getString("model"));
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+    /*---------------end prices---------------------*/
 
     public List<Role> getAllRoles() {
         rs = null;

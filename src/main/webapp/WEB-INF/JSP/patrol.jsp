@@ -22,6 +22,6 @@
                 <div align="justify">Позвольте себе высшую роскошь — свободу. Исследуйте, отдыхайте, находите приключения вместе с Nissan PATROL — легендарным флагманом внедорожников Nissan.</div>
             </div>
         </div>
-        <span class="price">от 2 249 180 грн.</span>
+        <span class="price">от ${patrol} грн.</span>
     </div>
 </div>

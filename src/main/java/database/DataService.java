@@ -2,6 +2,7 @@ package database;
 
 import constants.Constants;
 import models.Account;
+import models.Price;
 import models.Role;
 import org.apache.log4j.Logger;
 
@@ -27,6 +28,8 @@ public class DataService {
 		}
 	}
 
+
+
 	public DBConnection getDBConnection() {
 		synchronized (monitor) {
 			if (conPool.isEmpty()){
@@ -49,7 +52,20 @@ public class DataService {
 			conPool.add(conn);
 		}
 	}
-	
+
+	public List<Price> getAllPrices() {
+		DBConnection conn = getDBConnection();
+		List<Price> result = conn.getAllPrices();
+		this.putDBConnection(conn);
+		return result;
+	}
+
+	public Price getPrice(String model) {
+		DBConnection conn = getDBConnection();
+		Price result = conn.getPrice(model);
+		this.putDBConnection(conn);
+		return result;
+	}
 
 	public List<Account> getAllLogins() {
 		DBConnection conn = getDBConnection();

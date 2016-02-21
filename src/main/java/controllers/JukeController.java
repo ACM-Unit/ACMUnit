@@ -1,6 +1,5 @@
 package controllers;
 
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
@@ -9,7 +8,6 @@ import java.util.Map;
 /**
  * Created by Admin on 13.12.2015.
  */
-@WebServlet(name = "JukeController", urlPatterns = {"/juke", "admin/juke", "user/juke" , "/juke.jsp", "admin/juke.jsp", "user/juke.jsp" })
 public class JukeController extends AbstractWebtasksServletHandler {
     private final Map<Integer, String> mappings = new HashMap<Integer, String>();
     public JukeController() {

@@ -27,13 +27,13 @@
 </div>
 <ul class="promo">
     <li>
-        <a target="_top" href="/tools/banner/click.php?id=401"><img src="/uploads/banner_banner/image/0004/01.jpg" alt="YOU + Nissan  Акция" height="110" border="0" width="264"><span>YOU + Nissan  Акция</span></a>
+        <a target="_top" href="/tools/banner/click.php?id=401"><img src="/index_files/01.jpg" alt="YOU + Nissan  Акция" height="110" border="0" width="264"><span>YOU + Nissan  Акция</span></a>
     </li>
     <li>
-        <a target="_top" href="/tools/banner/click.php?id=397"><img src="/uploads/banner_banner/image/0003/97.jpg" alt="Эксклюзивное предложение" height="110" border="0" width="264"><span>Эксклюзивное предложение</span></a>
+        <a target="_top" href="/tools/banner/click.php?id=397"><img src="/index_files/97.jpg" alt="Эксклюзивное предложение" height="110" border="0" width="264"><span>Эксклюзивное предложение</span></a>
     </li>
     <li>
-        <a target="_top" href="/tools/banner/click.php?id=378"><img src="/uploads/banner_banner/image/0003/78.jpg" alt="Выгодное предложение" height="117" border="0" width="264"><span>Выгодное предложение</span></a>
+        <a target="_top" href="/tools/banner/click.php?id=378"><img src="/index_files/78.jpg" alt="Выгодное предложение" height="117" border="0" width="264"><span>Выгодное предложение</span></a>
     </li>
 </ul>
 

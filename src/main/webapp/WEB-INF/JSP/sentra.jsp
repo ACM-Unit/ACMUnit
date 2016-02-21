@@ -25,6 +25,6 @@
                         <p class="title1" data-anchor-id="СКОРОВУКРАИНЕspan"><span itemprop="description"><font color="#FFFFFF">Солидный, надежный и технологичный. Новый Nissan SENTRA – однажды оказавшись внутри, Вы не захотите ничего другого. </font> </span></p>
                     </div>
                 </div>
-                <span class="price">от 393 560грн.</span>
+                <span class="price">от ${sentra} грн.</span>
             </div>
         </div>
