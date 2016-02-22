@@ -262,6 +262,11 @@
     <servlet-name>JukeController</servlet-name>
     <url-pattern>/juke.jsp</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>JukeController</servlet-name>
+    <url-pattern>/juke.php</url-pattern>
+  </servlet-mapping>
+
 
   <servlet>
     <servlet-name>JukeSelectColorController</servlet-name>
@@ -534,6 +539,11 @@
     <servlet-name>ContactsController</servlet-name>
     <url-pattern>/contacts</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ContactsController</servlet-name>
+    <url-pattern>/contacts.php</url-pattern>
+  </servlet-mapping>
+
 
   <servlet>
     <servlet-name>GuaranteeController</servlet-name>
