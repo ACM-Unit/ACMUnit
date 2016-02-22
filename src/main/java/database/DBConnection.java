@@ -50,11 +50,11 @@ public class DBConnection {
     private void loadPreparedStatements() {
         try {
 
-            loadAllPrices = conn.prepareStatement("SELECT * from nissanv1.prices");
-            loadPrice=conn.prepareStatement("SELECT * from nissanv1.prices WHERE  model=?");
-            loadAllNews = conn.prepareStatement("SELECT * from NISSANV1.NEWS");
-            insertPrice = conn.prepareStatement("INSERT INTO NISSANV1.PRICES(MODEL, PRICE) VALUES(?, ?)");
-            updatePrice = conn.prepareStatement("UPDATE NISSANV1.PRICES SET PRICES.PRICE = ? WHERE PRICES.MODEL= ?");
+            loadAllPrices = conn.prepareStatement("SELECT * from nissanv2.prices");
+            loadPrice=conn.prepareStatement("SELECT * from nissanv2.prices WHERE  model=?");
+            loadAllNews = conn.prepareStatement("SELECT * from NISSANV2.NEWS");
+            insertPrice = conn.prepareStatement("INSERT INTO NISSANV2.PRICES(MODEL, PRICE) VALUES(?, ?)");
+            updatePrice = conn.prepareStatement("UPDATE NISSANV2.PRICES SET PRICES.PRICE = ? WHERE PRICES.MODEL= ?");
             //accounts
             loadAllRoles = conn.prepareStatement("SELECT * FROM roles");
             loadAllLogins = conn.prepareStatement("SELECT login, id FROM accounts ");
